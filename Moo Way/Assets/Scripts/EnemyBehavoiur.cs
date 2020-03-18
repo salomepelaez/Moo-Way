@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavoiur : MonoBehaviour
 {
+    float distance;
     float enemySpeed = 3f;
     Vector2 direction;
     Transform target;
@@ -17,25 +18,40 @@ public class EnemyBehavoiur : MonoBehaviour
 
     void Update()
     {
-        GetTarget();
+        distance = Vector2.Distance(transform.position, target.position);
+
+        if(distance >= 3)
+        {
+            GetTarget();
+        }
+
+        else
+        {
+            StopChasing();
+        }
+
+        Debug.Log(distance);
     }
 
-    public void GetTarget()
+    void GetTarget()
     {
-        /*direction = new Vector2(target.transform.position.x - transform.position.x, -0.04f);
-        transform.position = direction * enemySpeed * Time.deltaTime;*/
-
         if(transform.position.x < target.position.x)
         {
             rb2d.velocity = new Vector2(enemySpeed, 0);
-            //transform.localScale= new Vector2(1, 1);
+            transform.localScale= new Vector2(-0.3f, 0.3f);
         }
 
         else
         {
             rb2d.velocity = new Vector2(-enemySpeed, 0);
-            //transform.localScale= new Vector2(-1, 1);
+            transform.localScale= new Vector2(0.3f, 0.3f);
         }
 
+    }
+
+    void StopChasing()
+    {
+        rb2d.velocity = new Vector2(0, 0);
+        transform.localScale= new Vector2(-0.3f, 0.3f);
     }
 }
