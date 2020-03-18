@@ -20,7 +20,7 @@ public class EnemyBehavoiur : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, target.position);
 
-        if(distance >= 3)
+        if(distance >= 5)
         {
             GetTarget();
         }
