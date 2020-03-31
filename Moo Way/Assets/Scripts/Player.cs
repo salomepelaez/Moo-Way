@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float speed = 3.0f;
+    private float speed = 3.0f;
+
+    public Joystick joystick;
+
+    private Vector2 direction;
 
     void Update()
+    {
+
+        direction = joystick.Direction * speed * Time.deltaTime;
+        transform.position += new Vector3(direction.x, direction.y, 0f);
+        
+        KeyboardMovement();
+    }
+
+    void KeyboardMovement()
     {
         if (Input.GetKey(KeyCode.W) && gameObject.transform.position.y <= 4.1)
         {
