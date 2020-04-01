@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Transform playerTr;
-    
+    public Transform playerTr;    
 
     void Update()
     {
