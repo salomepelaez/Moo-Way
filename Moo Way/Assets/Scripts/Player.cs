@@ -10,9 +10,10 @@ public class Player : MonoBehaviour
 
     private Vector2 direction;
 
+    public static float held;
+
     void Update()
     {
-
         direction = joystick.Direction * speed * Time.deltaTime;
         transform.position += new Vector3(direction.x, direction.y, 0f);
         
@@ -39,6 +40,14 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && gameObject.transform.position.x >= -8)
         {
             transform.position -= transform.right * speed * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Cow")
+        {
+            
         }
     }
 }

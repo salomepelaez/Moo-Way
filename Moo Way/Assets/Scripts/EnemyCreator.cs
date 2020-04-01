@@ -8,7 +8,7 @@ public class EnemyCreator : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("CreateEnemies", 1f,15f);
+        InvokeRepeating("CreateEnemies", 1f,20f);
     }
 
     void CreateEnemies()
