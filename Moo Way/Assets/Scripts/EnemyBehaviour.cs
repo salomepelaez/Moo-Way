@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehavoiur : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     float distance;
     float enemySpeed = 3f;
