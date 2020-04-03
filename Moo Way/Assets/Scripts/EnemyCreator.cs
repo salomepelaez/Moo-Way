@@ -20,7 +20,7 @@ public class EnemyCreator : MonoBehaviour
 
         Vector3 pos = new Vector3();
         pos.x = 7.9f;
-        pos.y = 0.19f;
+        pos.y = 0f;
         pos.z = 0;
         police.transform.position = pos;
     }
