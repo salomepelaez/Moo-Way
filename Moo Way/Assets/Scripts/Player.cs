@@ -54,9 +54,9 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -0.3f, 0);
         }
 
-        else if (gameObject.transform.position.x <= -18f)
+        else if (gameObject.transform.position.x <= -20f)
         {
-            transform.position = new Vector3(-18f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-20f, transform.position.y, transform.position.z);
         }
     }
     /*private void OnTriggerEnter(Collider other)
