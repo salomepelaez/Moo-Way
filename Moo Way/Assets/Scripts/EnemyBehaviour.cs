@@ -29,8 +29,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
             StopChasing();
         }
-
-        Debug.Log(distance);
     }
 
     void GetTarget()
@@ -44,7 +42,7 @@ public class EnemyBehaviour : MonoBehaviour
         else
         {
             rb2d.velocity = new Vector2(-enemySpeed, 0);
-            transform.localScale= new Vector2(0.3f, 0.3f);
+            transform.localScale= new Vector2(-0.3f, 0.3f);
         }
 
     }
@@ -52,6 +50,6 @@ public class EnemyBehaviour : MonoBehaviour
     void StopChasing()
     {
         rb2d.velocity = new Vector2(0, 0);
-        transform.localScale= new Vector2(-0.3f, 0.3f);
+        transform.localScale= new Vector2(0.3f, 0.3f);
     }
 }
