@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1
+  parallaxEffect: 0.5
 --- !u!1 &100056594
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1.5
+  parallaxEffect: 0.8
 --- !u!1001 &256286641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1
+  parallaxEffect: 0.5
 --- !u!1 &476581039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1
+  parallaxEffect: 0.5
 --- !u!1 &711485526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1
+  parallaxEffect: 0.5
 --- !u!1 &734338924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1.5
+  parallaxEffect: 0.8
 --- !u!1 &747473383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4316294596948217724, guid: 1778bfa8625c1f048863fdab3a05f1bc,
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1.5
+  parallaxEffect: 0.8
 --- !u!1 &950709820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,7 +3584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1
+  parallaxEffect: 0.5
 --- !u!1001 &1212925632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4261,7 +4261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1
+  parallaxEffect: 0.5
 --- !u!212 &1946582972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4622,7 +4622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1.5
+  parallaxEffect: 0.8
 --- !u!1 &2107090206
 GameObject:
   m_ObjectHideFlags: 0
