@@ -30,6 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         Physics.IgnoreLayerCollision(9, 10, true);
+        Physics.IgnoreLayerCollision(9, 9, true);
     }
 
     void GetTarget()
