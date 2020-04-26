@@ -6,7 +6,6 @@ public class EnemyBehaviour : MonoBehaviour
 {
     float distance;
     float enemySpeed = 3f;
-    Vector2 direction;
     Transform target;
     Rigidbody2D rb2d;
 
@@ -20,7 +19,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, target.position);
 
-        if(distance >= 5)
+        if(distance <= 5)
         {
             GetTarget();
         }
