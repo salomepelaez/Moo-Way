@@ -502,6 +502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CowPrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5916961298707096523, guid: 1778bfa8625c1f048863fdab3a05f1bc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1778bfa8625c1f048863fdab3a05f1bc, type: 3}
 --- !u!1001 &403026477
@@ -570,6 +575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CowPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916961298707096523, guid: 1778bfa8625c1f048863fdab3a05f1bc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1778bfa8625c1f048863fdab3a05f1bc, type: 3}
@@ -3586,6 +3596,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CowPrefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5916961298707096523, guid: 1778bfa8625c1f048863fdab3a05f1bc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1778bfa8625c1f048863fdab3a05f1bc, type: 3}
 --- !u!1 &1215479154
@@ -4392,6 +4407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CowPrefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916961298707096523, guid: 1778bfa8625c1f048863fdab3a05f1bc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1778bfa8625c1f048863fdab3a05f1bc, type: 3}

@@ -13,7 +13,7 @@ public class FloatingCow : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(Input.GetKeyDown(KeyCode.Space))
+       if(Input.GetKeyDown(KeyCode.X))
        {
            animator.SetBool("isFloating", false);
            animator.SetBool("isIddle", true);
