@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 8162646061278901567}
   - component: {fileID: 8162646061278901564}
   - component: {fileID: 3390500405837923625}
-  m_Layer: 0
+  - component: {fileID: 5207768960465143935}
+  - component: {fileID: 745681281290889001}
+  - component: {fileID: -7694413313133384600}
+  m_Layer: 9
   m_Name: Police
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,3 +126,57 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &5207768960465143935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162646061278901565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314d1014df4aee140978348bcf3ba827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  moveSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &745681281290889001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162646061278901565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc9bb011b6835444a93926194852614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &-7694413313133384600
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162646061278901565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.0054173, y: 0.6582958}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 12}
+    newSize: {x: 16, y: 12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.784701, y: 4.862684}
+  m_EdgeRadius: 0

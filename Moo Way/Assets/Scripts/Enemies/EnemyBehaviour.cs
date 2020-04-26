@@ -28,6 +28,8 @@ public class EnemyBehaviour : MonoBehaviour
         {
             StopChasing();
         }
+
+        Physics.IgnoreLayerCollision(9, 10, true);
     }
 
     void GetTarget()
