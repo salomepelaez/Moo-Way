@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Messages : MonoBehaviour
 {
     public TextMeshProUGUI message;
-    private bool held = false;
 
     private void Awake()
     {
@@ -21,19 +20,15 @@ public class Messages : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.transform.tag == "Cow" && held == false)
+        if (other.transform.tag == "Cow")
         {
             message.text = "Press Y to pick up the cow";
 
             if (Input.GetKeyDown(KeyCode.Y))
             {
-                message.text = "";
-                held = true;
+                message.text = "Press X to drop the cow";
             }
         }
-
-        else if(held == true)
-             message.text = "";
     }    
 
     private void OnTriggerExit2D(Collider2D other)
