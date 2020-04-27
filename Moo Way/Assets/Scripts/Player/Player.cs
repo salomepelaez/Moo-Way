@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
     void KeyboardMovement()
     {
-        if (Input.GetKey(KeyCode.W) && gameObject.transform.position.y <= 4f)
+        if (Input.GetKey(KeyCode.W))
         {
             transform.position += transform.up * speed * Time.deltaTime;
         }
@@ -31,12 +31,12 @@ public class Player : MonoBehaviour
             transform.position -= transform.up * speed * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.D) && gameObject.transform.position.x <= 8f)
+        if (Input.GetKey(KeyCode.D))
         {
             transform.position += transform.right * speed * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.A) && gameObject.transform.position.x >= -8f)
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position -= transform.right * speed * Time.deltaTime;
         }
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
         else if (gameObject.transform.position.y <= 0.3f)
         {
-            transform.position = new Vector3(transform.position.x, -0.3f, 0);
+            transform.position = new Vector3(transform.position.x, 0.3f, 0);
         }
 
         else if (gameObject.transform.position.x <= -20f)
@@ -59,11 +59,4 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(-20f, transform.position.y, transform.position.z);
         }
     }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.tag == "Cow")
-        {
-            
-        }
-    }*/
 }

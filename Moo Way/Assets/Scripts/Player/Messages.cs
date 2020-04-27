@@ -26,7 +26,7 @@ public class Messages : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Y))
             {
-                message.text = "Press X to drop the cow";
+                message.text = "";
             }
         }
     }    
