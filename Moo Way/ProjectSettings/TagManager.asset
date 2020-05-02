@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Cow
   - Point
+  - Collider1
+  - Collider2
+  - Collider3
   layers:
   - Default
   - TransparentFX
