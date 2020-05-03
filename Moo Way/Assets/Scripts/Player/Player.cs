@@ -44,9 +44,9 @@ public class Player : MonoBehaviour
 
     private void LimitateAxis()
     {
-        if (gameObject.transform.position.y >= 4f)
+        if (gameObject.transform.position.y >= 7.5f)
         {
-            transform.position = new Vector3(transform.position.x, 4f, 0);
+            transform.position = new Vector3(transform.position.x, 7.5f, 0);
         }
 
         else if (gameObject.transform.position.y <= 0.3f)
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
         else if (gameObject.transform.position.x <= -20f)
         {
-            transform.position = new Vector3(-20f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-20f, transform.position.y, 0);
         }
     }
 }
