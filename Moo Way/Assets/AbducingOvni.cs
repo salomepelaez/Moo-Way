@@ -8,9 +8,7 @@ public class AbducingOvni : StateMachineBehaviour
     {        
         if(Input.GetKeyDown(KeyCode.X))
        {
-           animator.SetBool("isIddle", true);
            animator.SetBool("isAbducing", false);    
        }
     }
-
 }
