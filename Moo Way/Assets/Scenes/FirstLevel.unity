@@ -1401,6 +1401,10 @@ MonoBehaviour:
   - Press Y to abduct
   - You must get close enough to pick up the cows
   - Press X to drop what you've collected
+  - You can exit the ship by pressing B,
+  - and teleport back to it using C
+  - The alien has the ability to attract animals
+  - You can let them go with J key
   - 
   button: {fileID: 1279568619}
 --- !u!4 &269919314
@@ -2271,6 +2275,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1498533636419074161, guid: 1778bfa8625c1f048863fdab3a05f1bc,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -1.0331097
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498533636419074161, guid: 1778bfa8625c1f048863fdab3a05f1bc,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.2304354
+      objectReference: {fileID: 0}
     - target: {fileID: 4316294596948217720, guid: 1778bfa8625c1f048863fdab3a05f1bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3004,7 +3018,9 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 1584032588}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 299105054}
+  - {fileID: 1172642219}
   m_Instructions:
   - m_FullHash: 1796901881
     m_VirtualCamera: {fileID: 299105054}
@@ -4292,6 +4308,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &747473385
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747473383}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.89211035, y: 0.07052708}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 8}
+    newSize: {x: 16, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15.039262, y: 4.8968563}
+  m_EdgeRadius: 0
 --- !u!114 &747473389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16354,6 +16396,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &1850145102
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850145100}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 8}
+    newSize: {x: 16, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16, y: 8}
+  m_EdgeRadius: 0
 --- !u!114 &1850145106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16878,6 +16946,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &2040952344
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040952342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 8}
+    newSize: {x: 16, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16, y: 8}
+  m_EdgeRadius: 0
 --- !u!114 &2040952348
 MonoBehaviour:
   m_ObjectHideFlags: 0

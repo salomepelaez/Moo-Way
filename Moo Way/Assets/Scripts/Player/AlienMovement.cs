@@ -11,6 +11,7 @@ public class AlienMovement : MonoBehaviour
     private Vector2 direction;
 
     public static bool alienControl = false;
+    public static bool abducting = false;
 
     private Animator anim;
 
@@ -24,8 +25,7 @@ public class AlienMovement : MonoBehaviour
     void Update()
     {
         ChangeControl();
-        KeyboardMovement(); 
-        Abduct();  
+        KeyboardMovement();
     }
 
     void ChangeControl()
@@ -58,18 +58,20 @@ public class AlienMovement : MonoBehaviour
             anim.SetBool("walking", false);            
         }
     }
-
-    void Abduct()
+   
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetKey(KeyCode.H))
+        if(other.tag == "Cow")
         {
-            transform.localScale= new Vector2(0.22349f, 0.1635545f);
             anim.SetBool("isAttacking", true);
-        }
+            abducting = true;
 
-        else if(Input.GetKey(KeyCode.J))
-        {
-            anim.SetBool("isAttacking", false);
+            if(Input.GetKey(KeyCode.J))
+            {
+                anim.SetBool("isAttacking", false);
+                abducting = false;
+            }
+            Debug.Log("entró");
         }
     }
 }
