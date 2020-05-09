@@ -12,33 +12,39 @@ public class Player : MonoBehaviour
  
     void Update()
     {
-        direction = joystick.Direction * speed * Time.deltaTime;
-        transform.position += new Vector3(direction.x, direction.y, 0f);
-        
+        if(AlienMovement.alienControl == false)
+        {
+            direction = joystick.Direction * speed * Time.deltaTime;
+            transform.position += new Vector3(direction.x, direction.y, 0f);
+        }
+
         KeyboardMovement();
         LimitateAxis();
     }
 
     void KeyboardMovement()
     {
-        if (Input.GetKey(KeyCode.W))
+        if(AlienMovement.alienControl == false)
         {
-            transform.position += transform.up * speed * Time.deltaTime;
-        }
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position += transform.up * speed * Time.deltaTime;
+            }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position -= transform.up * speed * Time.deltaTime;
-        }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.position -= transform.up * speed * Time.deltaTime;
+            }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += transform.right * speed * Time.deltaTime;
-        }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += transform.right * speed * Time.deltaTime;
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= transform.right * speed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position -= transform.right * speed * Time.deltaTime;
+            }
         }
     }
 

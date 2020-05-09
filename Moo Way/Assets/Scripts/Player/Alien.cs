@@ -6,7 +6,7 @@ public class Alien : MonoBehaviour
 {
     public GameObject alien;
 
-    private bool isCreated = false;
+    public static bool isCreated = false;
 
     private Transform player;
 
@@ -33,12 +33,14 @@ public class Alien : MonoBehaviour
             pos.z = 0f;
             alien.transform.position = pos;
 
-            isCreated = true;            
+            isCreated = true; 
+            AlienMovement.alienControl = true;           
         }  
 
         else if (Input.GetKey(KeyCode.C) && isCreated == true)
         {            
             isCreated = false;
+            AlienMovement.alienControl = false;  
             alien.SetActive(false);
         }     
     }
