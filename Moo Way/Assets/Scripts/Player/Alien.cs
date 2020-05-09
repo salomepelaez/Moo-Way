@@ -12,6 +12,7 @@ public class Alien : MonoBehaviour
 
     void Start()
     {
+        alien.SetActive(false);
         player = FindObjectOfType<Player>().GetComponent<Transform>();
     }
 
@@ -24,19 +25,21 @@ public class Alien : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.B) && isCreated == false)
         {
-            isCreated = true;
-            GameObject a = Instantiate(alien, Vector3.zero, Quaternion.identity);            
+            alien.SetActive(true);
+                                    
             Vector3 pos = new Vector3();
             pos.x = player.position.x;
             pos.y = -0.3f;
             pos.z = 0f;
-            a.transform.position = pos;
+            alien.transform.position = pos;
 
-            if (Input.GetKey(KeyCode.C) && isCreated == true)
-            {            
-                isCreated = false;
-                Destroy(this.gameObject);
-            }
-        }       
+            isCreated = true;            
+        }  
+
+        else if (Input.GetKey(KeyCode.C) && isCreated == true)
+        {            
+            isCreated = false;
+            alien.SetActive(false);
+        }     
     }
 }
