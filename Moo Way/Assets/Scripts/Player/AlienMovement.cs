@@ -22,7 +22,8 @@ public class AlienMovement : MonoBehaviour
     void Update()
     {
         ChangeControl();
-        KeyboardMovement();   
+        KeyboardMovement(); 
+        Abduct();  
     }
 
     void ChangeControl()
@@ -53,6 +54,20 @@ public class AlienMovement : MonoBehaviour
         else
         {
             anim.SetBool("walking", false);            
+        }
+    }
+
+    void Abduct()
+    {
+        if (Input.GetKey(KeyCode.H))
+        {
+            transform.localScale= new Vector2(0.22349f, 0.1635545f);
+            anim.SetBool("isAttacking", true);
+        }
+
+        else if(Input.GetKey(KeyCode.J))
+        {
+            anim.SetBool("isAttacking", false);
         }
     }
 }
