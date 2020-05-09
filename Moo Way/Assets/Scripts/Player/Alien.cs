@@ -23,7 +23,7 @@ public class Alien : MonoBehaviour
 
     void AlienInstantiate()
     {
-        if (Input.GetKey(KeyCode.B) && isCreated == false)
+        if (Input.GetKey(KeyCode.B) && isCreated == false && Player.canWalk == true)
         {
             alien.SetActive(true);
                                     
@@ -40,8 +40,9 @@ public class Alien : MonoBehaviour
         else if (Input.GetKey(KeyCode.C) && isCreated == true)
         {            
             isCreated = false;
+            Player.canWalk = false;
             AlienMovement.alienControl = false;  
             alien.SetActive(false);
-        }     
+        }    
     }
 }

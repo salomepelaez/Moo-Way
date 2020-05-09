@@ -9,6 +9,7 @@ TagManager:
   - Collider1
   - Collider2
   - Collider3
+  - Ground
   layers:
   - Default
   - TransparentFX

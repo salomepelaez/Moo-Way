@@ -14,6 +14,8 @@ public class AlienMovement : MonoBehaviour
 
     private Animator anim;
 
+    public GameObject alien;
+
     void Start()
     {
         anim = GetComponent<Animator>();

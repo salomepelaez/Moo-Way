@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public Joystick joystick;
 
     private Vector2 direction;
+
+    public static bool canWalk = false;
  
     void Update()
     {
@@ -55,14 +57,30 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 7.5f, 0);
         }
 
-        else if (gameObject.transform.position.y <= 0.3f)
+        else if (gameObject.transform.position.y <= 2.1f)
         {
-            transform.position = new Vector3(transform.position.x, 0.3f, 0);
+            transform.position = new Vector3(transform.position.x, 2.1f, 0);
         }
 
         else if (gameObject.transform.position.x <= -20f)
         {
             transform.position = new Vector3(-20f, transform.position.y, 0);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Ground")
+        {
+            canWalk = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Ground")
+        {
+            canWalk = false;
         }
     }
 }

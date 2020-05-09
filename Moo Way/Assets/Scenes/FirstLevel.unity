@@ -3004,9 +3004,7 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 1584032588}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 299105054}
-  - {fileID: 1172642219}
+  m_ChildCameras: []
   m_Instructions:
   - m_FullHash: 1796901881
     m_VirtualCamera: {fileID: 299105054}
@@ -4072,6 +4070,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.014750511
       objectReference: {fileID: 0}
+    - target: {fileID: 4657300223393094001, guid: 23b844e63c627204db77ca14644fb154,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 3.152985
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657300223393094001, guid: 23b844e63c627204db77ca14644fb154,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 13.995147
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8181091736819876207, guid: 23b844e63c627204db77ca14644fb154, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 23b844e63c627204db77ca14644fb154, type: 3}
@@ -4094,6 +4102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 1407896625}
+  alien: {fileID: 740459848}
 --- !u!4 &740459856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1351812859480445344, guid: 23b844e63c627204db77ca14644fb154,
@@ -4653,9 +4662,11 @@ GameObject:
   - component: {fileID: 950709823}
   - component: {fileID: 950709822}
   - component: {fileID: 950709824}
+  - component: {fileID: 950709825}
+  - component: {fileID: 950709826}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11802,7 +11813,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.5, y: -1.9837742}
+  m_Offset: {x: 44.523422, y: -1.9837742}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11813,8 +11824,55 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 64, y: 2.0324516}
+  m_Size: {x: 151.20908, y: 2.0324516}
   m_EdgeRadius: 0
+--- !u!61 &950709825
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950709820}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 46.5, y: -2.2820034}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 161, y: 7.3831367}
+  m_EdgeRadius: 0
+--- !u!50 &950709826
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950709820}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &957562959
 GameObject:
   m_ObjectHideFlags: 0
@@ -15596,7 +15654,7 @@ GameObject:
   - component: {fileID: 1584032583}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15611,10 +15669,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.82978785}
+  m_Offset: {x: 0.15888977, y: -1.8751731}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15625,7 +15683,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16, y: 2.6669514}
+  m_Size: {x: 32.207382, y: 4.757723}
   m_EdgeRadius: 0
 --- !u!50 &1584032584
 Rigidbody2D:
