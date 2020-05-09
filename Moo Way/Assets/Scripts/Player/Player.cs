@@ -9,11 +9,7 @@ public class Player : MonoBehaviour
     public Joystick joystick;
 
     private Vector2 direction;
-
-    public GameObject alien;
-
-    private bool isCreated = false;
-
+ 
     void Update()
     {
         direction = joystick.Direction * speed * Time.deltaTime;
@@ -21,7 +17,6 @@ public class Player : MonoBehaviour
         
         KeyboardMovement();
         LimitateAxis();
-        AlienInstantiate();
     }
 
     void KeyboardMovement()
@@ -62,20 +57,6 @@ public class Player : MonoBehaviour
         else if (gameObject.transform.position.x <= -20f)
         {
             transform.position = new Vector3(-20f, transform.position.y, 0);
-        }
-    }
-
-    void AlienInstantiate()
-    {
-        if (Input.GetKey(KeyCode.B) && isCreated == false)
-        {
-            GameObject a = Instantiate(alien, Vector3.zero, Quaternion.identity);
-            isCreated = true;
-            Vector3 pos = new Vector3();
-            pos.x = -4.5f;
-            pos.y = transform.position.y;
-            pos.z = 0f;
-            a.transform.position = pos;
         }
     }
 }
