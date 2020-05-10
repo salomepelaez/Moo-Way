@@ -25,7 +25,7 @@ public class AlienMovement : MonoBehaviour
     void Update()
     {
         ChangeControl();
-        KeyboardMovement();
+        Keyboard();
     }
 
     void ChangeControl()
@@ -37,7 +37,7 @@ public class AlienMovement : MonoBehaviour
         }
     }
 
-    void KeyboardMovement()
+    void Keyboard()
     {
         if (Input.GetKey(KeyCode.D))
         {
@@ -53,6 +53,12 @@ public class AlienMovement : MonoBehaviour
             anim.SetBool("walking", true);
         }
 
+        else if(Input.GetKey(KeyCode.J))
+        {
+            anim.SetBool("isAttacking", false);
+            abducting = false;
+        }
+
         else
         {
             anim.SetBool("walking", false);            
@@ -65,13 +71,6 @@ public class AlienMovement : MonoBehaviour
         {
             anim.SetBool("isAttacking", true);
             abducting = true;
-
-            if(Input.GetKey(KeyCode.J))
-            {
-                anim.SetBool("isAttacking", false);
-                abducting = false;
-            }
-            Debug.Log("entró");
         }
     }
 }
