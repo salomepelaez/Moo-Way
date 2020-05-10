@@ -1401,7 +1401,7 @@ MonoBehaviour:
   - Press Y to abduct
   - You must get close enough to pick up the cows
   - Press X to drop what you've collected
-  - You can exit the ship by pressing B,
+  - If you're close enough to the ground, you can exit the ship by pressing B,
   - and teleport back to it using C
   - The alien has the ability to attract animals
   - You can let them go with J key
