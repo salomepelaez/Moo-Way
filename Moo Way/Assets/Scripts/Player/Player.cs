@@ -12,16 +12,13 @@ public class Player : MonoBehaviour
     private Vector2 direction;
 
     public static bool canWalk = false;
-    private bool empty = false;
+    public static bool empty = false;
  
     void Start()
     {
         fuel = 10;
 
-        InvokeRepeating("LoseFuel", 5f, 1f);            
-    
-        InvokeRepeating("GetFuel", 5f, 1f);
-        
+        InvokeRepeating("LoseFuel", 5f, 1f);    
     }
 
     void Update()
@@ -100,14 +97,15 @@ public class Player : MonoBehaviour
 
     void LoseFuel()
     {
-        if(empty == false)
+        if(empty == false && AlienMovement.alienControl == false)
         {
             fuel = fuel - 1;   
             if(fuel <= 0)
             {
                 empty = true;
-                canWalk = true;            
-            }     
+                canWalk = true;        
+                InvokeRepeating("GetFuel", 5f, 1f);    
+            }    
         }
     }
 
