@@ -11,7 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Start()
     {
-        target = FindObjectOfType<Player>().GetComponent<Transform>();
+        target = FindObjectOfType<AlienMovement>().GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 

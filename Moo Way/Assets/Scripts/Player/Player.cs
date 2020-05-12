@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
  
     void Start()
     {
-        fuel = 10;
+        fuel = 20;
 
         InvokeRepeating("LoseFuel", 5f, 1f);    
     }
@@ -104,6 +104,7 @@ public class Player : MonoBehaviour
             {
                 empty = true;
                 canWalk = true;        
+                transform.position = new Vector3(transform.position.x, 2.1f, 0);
                 InvokeRepeating("GetFuel", 5f, 1f);    
             }    
         }
@@ -115,7 +116,7 @@ public class Player : MonoBehaviour
         {
             fuel = fuel + 1;
 
-            if(fuel >= 10)
+            if(fuel >= 20)
             {
                 empty = false;
             }

@@ -9,7 +9,7 @@ public class IddleBehaviour : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       target = FindObjectOfType<Player>().GetComponent<Transform>();
+        target = FindObjectOfType<Player>().GetComponent<Transform>();       
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
