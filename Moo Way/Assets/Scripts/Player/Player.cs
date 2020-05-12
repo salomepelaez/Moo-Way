@@ -5,13 +5,31 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private float speed = 3.0f;
+    private int fuel;
 
     public Joystick joystick;
 
     private Vector2 direction;
 
     public static bool canWalk = false;
+    private bool empty = false;
  
+    void Start()
+    {
+        fuel = 10;
+
+        if(empty == false)
+        {
+            InvokeRepeating("LoseFuel", 5f, 1f);            
+        }
+
+        else if(empty == true)
+        {
+            CancelInvoke("LoseFuel");
+            InvokeRepeating("GetFuel", 5f, 1f);
+        }
+    }
+
     void Update()
     {
         if(AlienMovement.alienControl == false)
@@ -22,6 +40,8 @@ public class Player : MonoBehaviour
 
         KeyboardMovement();
         LimitateAxis();
+
+        Debug.Log(fuel);
     }
 
     void KeyboardMovement()
@@ -82,5 +102,20 @@ public class Player : MonoBehaviour
         {
             canWalk = false;
         }
+    }
+
+    void LoseFuel()
+    {
+        fuel = fuel - 1;   
+        if(fuel == 1)
+        {
+            empty = true;
+            canWalk = true;            
+        }     
+    }
+
+    void GetFuel()
+    {
+        fuel = fuel++;
     }
 }
