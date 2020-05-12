@@ -18,16 +18,10 @@ public class Player : MonoBehaviour
     {
         fuel = 10;
 
-        if(empty == false)
-        {
-            InvokeRepeating("LoseFuel", 5f, 1f);            
-        }
-
-        else if(empty == true)
-        {
-            CancelInvoke("LoseFuel");
-            InvokeRepeating("GetFuel", 5f, 1f);
-        }
+        InvokeRepeating("LoseFuel", 5f, 1f);            
+    
+        InvokeRepeating("GetFuel", 5f, 1f);
+        
     }
 
     void Update()
@@ -106,16 +100,27 @@ public class Player : MonoBehaviour
 
     void LoseFuel()
     {
-        fuel = fuel - 1;   
-        if(fuel == 1)
+        if(empty == false)
         {
-            empty = true;
-            canWalk = true;            
-        }     
+            fuel = fuel - 1;   
+            if(fuel <= 0)
+            {
+                empty = true;
+                canWalk = true;            
+            }     
+        }
     }
 
     void GetFuel()
     {
-        fuel = fuel++;
+        if(empty == true)
+        {
+            fuel = fuel + 1;
+
+            if(fuel >= 10)
+            {
+                empty = false;
+            }
+        }
     }
 }
