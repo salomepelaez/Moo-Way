@@ -9,6 +9,7 @@ public class PlatformActivator : MonoBehaviour
     public GameObject platform;
     public GameObject button;
     private bool canBuild = false;
+    private bool built = false;
     
     void Start()
     {
@@ -17,7 +18,7 @@ public class PlatformActivator : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Activator")
+        if(other.tag == "Activator" && built == false)
         {
             activate.text = "Press the button to build the teletransportation platform";
             button.SetActive(true);
@@ -27,7 +28,7 @@ public class PlatformActivator : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Activator")
+        if(other.tag == "Activator" || built == true)
         {
             activate.text = "";
             button.SetActive(false);
@@ -37,7 +38,7 @@ public class PlatformActivator : MonoBehaviour
 
     public void ActivatePlatform()
     {
-        if(canBuild == true)
+        if(canBuild == true && built == false)
         {
             GameObject p = Instantiate(platform, Vector3.zero, Quaternion.identity);
             Vector3 pos = new Vector3();
@@ -45,6 +46,8 @@ public class PlatformActivator : MonoBehaviour
             pos.y = -0.6f;
             pos.z = 0;
             p.transform.position = pos;
+
+            built = true;
         }
     }
 }
