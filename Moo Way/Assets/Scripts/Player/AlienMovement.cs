@@ -64,13 +64,4 @@ public class AlienMovement : MonoBehaviour
             anim.SetBool("walking", false);            
         }
     }
-   
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Cow")
-        {
-            anim.SetBool("isAttacking", true);
-            abducting = true;
-        }
-    }
 }

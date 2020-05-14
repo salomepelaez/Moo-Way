@@ -10,6 +10,8 @@ TagManager:
   - Collider2
   - Collider3
   - Ground
+  - Activator
+  - Platform
   layers:
   - Default
   - TransparentFX

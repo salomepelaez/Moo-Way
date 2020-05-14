@@ -102,9 +102,7 @@ public class Player : MonoBehaviour
             fuel = fuel - 1;   
             if(fuel <= 0)
             {
-                empty = true;
-                canWalk = true;        
-                transform.position = new Vector3(transform.position.x, 2.1f, 0);
+                empty = true;       
                 InvokeRepeating("GetFuel", 5f, 1f);    
             }    
         }
