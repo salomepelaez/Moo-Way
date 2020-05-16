@@ -16,14 +16,9 @@ public class Alien : MonoBehaviour
         player = FindObjectOfType<Player>().GetComponent<Transform>();
     }
 
-    void Update()
+    public void AlienInstantiate()
     {
-        AlienInstantiate();
-    }
-
-    void AlienInstantiate()
-    {
-        if (Input.GetKey(KeyCode.B) && isCreated == false && Player.canWalk == true || Player.empty == true)
+        if (isCreated == false && Player.canWalk == true && Manager.inGame == true)
         {
             alien.SetActive(true);
                                     
@@ -36,8 +31,11 @@ public class Alien : MonoBehaviour
             isCreated = true; 
             AlienMovement.alienControl = true;           
         }  
+    }
 
-        else if (Input.GetKey(KeyCode.C) && isCreated == true)
+    public void GoBack()
+    {
+        if(isCreated == true && Manager.inGame == true)
         {            
             isCreated = false;
             Player.canWalk = false;

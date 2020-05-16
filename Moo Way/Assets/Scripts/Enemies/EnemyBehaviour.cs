@@ -22,7 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, target.position);
 
-        if(distance <= 5)
+        if(distance <= 5 && Manager.inGame == true)
         {
             GetTarget();
         }
@@ -68,7 +68,9 @@ public class EnemyBehaviour : MonoBehaviour
             timeLeft -= Time.deltaTime;
 
                 if(timeLeft < 0)
-                    Debug.Log("perdites");
+                {
+                    Manager.inGame = false;
+                }
         }
 
         else 

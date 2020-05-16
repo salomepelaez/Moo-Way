@@ -18,7 +18,7 @@ public class IddleBehaviour : StateMachineBehaviour
     {
        distance = Vector2.Distance(animator.transform.position, target.position);
 
-        if(distance <= 5)
+        if(distance <= 5  && Manager.inGame == true)
         {
             animator.SetBool("isFollowing", true); 
             timer = true;

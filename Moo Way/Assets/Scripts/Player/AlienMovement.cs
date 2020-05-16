@@ -30,7 +30,7 @@ public class AlienMovement : MonoBehaviour
 
     void ChangeControl()
     {
-        if(alienControl == true)
+        if(alienControl == true  && Manager.inGame == true)
         {
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);

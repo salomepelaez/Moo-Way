@@ -21,17 +21,20 @@ public class Patrol : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
-        if(Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+        if(Manager.inGame == true)
         {
-            if(waitTime <= 0)
+            if(Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
             {
-                randomSpot = Random.Range(0, moveSpots.Length);
-                waitTime = startWaitTime;
-            }
+                if(waitTime <= 0)
+                {
+                    randomSpot = Random.Range(0, moveSpots.Length);
+                    waitTime = startWaitTime;
+                }
 
-            else
-            {
-                waitTime -= Time.deltaTime;
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
             }
         }
     }
