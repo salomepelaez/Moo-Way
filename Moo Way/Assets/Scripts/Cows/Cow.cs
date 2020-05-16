@@ -9,9 +9,19 @@ public class Cow : MonoBehaviour
    
     public static bool floating = false;
 
+    private int counter = 0;
+
     private void Start()
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
+    }
+
+    private void Update()
+    {
+        if(counter > 1)
+        {
+            Debug.Log("ganates");
+        }
     }
 
     public void PickUpCow()
@@ -27,5 +37,15 @@ public class Cow : MonoBehaviour
     public void DropCow()
     {
         floating = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Platform")
+        {
+            Destroy(this.gameObject);
+            counter = counter + 1;
+            Debug.Log(counter);
+        }
     }
 }
