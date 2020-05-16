@@ -19,6 +19,7 @@ public class FollowBehaviour : StateMachineBehaviour
         if(distance >= 5)
         {
             animator.SetBool("isFollowing", false); 
+            IddleBehaviour.timer = false;
         }
     }
 }

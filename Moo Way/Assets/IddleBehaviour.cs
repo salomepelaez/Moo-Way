@@ -7,6 +7,8 @@ public class IddleBehaviour : StateMachineBehaviour
     Transform target;
     float distance;
 
+    public static bool timer = false;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();       
@@ -19,6 +21,7 @@ public class IddleBehaviour : StateMachineBehaviour
         if(distance <= 5)
         {
             animator.SetBool("isFollowing", true); 
+            timer = true;
         }
     }
 }

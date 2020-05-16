@@ -6,6 +6,9 @@ public class EnemyBehaviour : MonoBehaviour
 {
     float distance;
     float enemySpeed = 3f;
+
+    float timeLeft = 10.0f;
+
     Transform target;
     Rigidbody2D rb2d;
 
@@ -31,6 +34,8 @@ public class EnemyBehaviour : MonoBehaviour
 
         Physics.IgnoreLayerCollision(9, 10, true);
         Physics.IgnoreLayerCollision(9, 9, true);
+
+        Debug.Log(timeLeft);
     }
 
     void GetTarget()
@@ -47,11 +52,26 @@ public class EnemyBehaviour : MonoBehaviour
             transform.localScale= new Vector2(-0.3f, 0.3f);
         }
 
+        InvokeRepeating("StartTimer", 1f, 1f);
     }
 
     void StopChasing()
     {
         rb2d.velocity = new Vector2(0, 0);
         transform.localScale= new Vector2(0.3f, 0.3f);
+    }
+
+    void StartTimer()
+    {
+        if(IddleBehaviour.timer == true)
+        {    
+            timeLeft -= Time.deltaTime;
+
+                if(timeLeft < 0)
+                    Debug.Log("perdites");
+        }
+
+        else 
+            timeLeft = 10.0f;
     }
 }
