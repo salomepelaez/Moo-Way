@@ -18,7 +18,7 @@ public class FloatingCow : StateMachineBehaviour
     {
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, target.position, speed * Time.deltaTime);
 
-       if(Input.GetKeyDown(KeyCode.X))
+       if(Input.GetKeyDown(KeyCode.X) || Cow.floating == false)
        {
            animator.SetBool("isFloating", false);
            animator.SetBool("isIddle", true);

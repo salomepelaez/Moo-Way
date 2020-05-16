@@ -4,38 +4,28 @@ using UnityEngine;
 
 public class Cow : MonoBehaviour
 {
-    private Animator anim;
-    private Transform alien;
+    private Transform target;
+    private float distance;
+   
+    public static bool floating = false;
 
-    private float speed = 1f;
-    private Rigidbody2D rb;
-
-    void Awake()
+    private void Start()
     {
-        transform.tag = "Cow";
-        alien = FindObjectOfType<AlienMovement>().GetComponent<Transform>();
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        target = FindObjectOfType<Player>().GetComponent<Transform>();
     }
 
-    void Start()
+    public void PickUpCow()
     {
-        InvokeRepeating("FloatingCow", 3f, 2f);
-    }    
+        distance = Vector2.Distance(transform.position, target.position);
 
-    void FloatingCow()
-    {
-        if(AlienMovement.abducting == true)
+        if(distance <= 3 && PlatformActivator.built == true)
         {
-            anim.SetBool("isFloating", true);
-            transform.position = Vector2.MoveTowards(transform.position, alien.position, speed * Time.deltaTime);
+            floating = true;
         }
+    }
 
-        else if(AlienMovement.abducting == false)
-       {
-           anim.SetBool("isFloating", false);
-           anim.SetBool("isIddle", true);
-           rb.gravityScale = 1;
-       }
+    public void DropCow()
+    {
+        floating = false;
     }
 }

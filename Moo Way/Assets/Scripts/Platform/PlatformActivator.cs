@@ -9,9 +9,9 @@ public class PlatformActivator : MonoBehaviour
     public GameObject platform;
     public GameObject button;
     private bool canBuild = false;
-    private bool built = false;
+    public static bool built = false;
     
-    void Start()
+    void Awake()
     {
         button.SetActive(false);
     }

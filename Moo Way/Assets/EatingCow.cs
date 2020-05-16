@@ -18,7 +18,7 @@ public class EatingCow : StateMachineBehaviour
     {
         distance = Vector2.Distance(animator.transform.position, target.position);
 
-       if(distance <= 3 && Input.GetKeyDown(KeyCode.Y))
+       if(distance <= 3 && PlatformActivator.built == true && Input.GetKeyDown(KeyCode.Y) || Cow.floating == true)
        {
             animator.SetBool("isFloating", true);    
             rb.gravityScale = 0;        

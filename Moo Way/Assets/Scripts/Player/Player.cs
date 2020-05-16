@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     {
         fuel = 20;
 
-        InvokeRepeating("LoseFuel", 5f, 1f);    
+       // InvokeRepeating("LoseFuel", 5f, 1f);    
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         KeyboardMovement();
         LimitateAxis();
 
-        Debug.Log(fuel);
+        //Debug.Log(fuel);
     }
 
     void KeyboardMovement()
