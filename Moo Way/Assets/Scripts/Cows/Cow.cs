@@ -16,14 +16,6 @@ public class Cow : MonoBehaviour
         target = FindObjectOfType<Player>().GetComponent<Transform>();
     }
 
-    private void Update()
-    {
-        if(counter > 1)
-        {
-            Debug.Log("ganates");
-        }
-    }
-
     public void PickUpCow()
     {
         distance = Vector2.Distance(transform.position, target.position);
@@ -46,6 +38,11 @@ public class Cow : MonoBehaviour
             Destroy(this.gameObject);
             counter = counter + 1;
             Debug.Log(counter);
+
+            if(counter > 3)
+            {
+                Debug.Log("ganates");
+            }
         }
     }
 }
