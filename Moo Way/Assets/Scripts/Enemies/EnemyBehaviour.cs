@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     float distance;
-    float enemySpeed = 3f;
-
-    float timeLeft = 10.0f;
+    float enemySpeed;
+    float timeLeft;
 
     Transform target;
     Rigidbody2D rb2d;
@@ -16,6 +15,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
+
+        enemySpeed = 3f;
+        timeLeft = 10.0f;
     }
 
     void Update()

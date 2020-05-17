@@ -6,7 +6,7 @@ public class Alien : MonoBehaviour
 {
     public GameObject alien;
 
-    public static bool isCreated = false;
+    public static bool isCreated;
 
     private Transform player;
 
@@ -14,6 +14,8 @@ public class Alien : MonoBehaviour
     {
         alien.SetActive(false);
         player = FindObjectOfType<Player>().GetComponent<Transform>();
+
+        isCreated = false;
     }
 
     void Update()

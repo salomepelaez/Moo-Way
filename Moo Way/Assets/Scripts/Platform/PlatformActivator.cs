@@ -8,12 +8,18 @@ public class PlatformActivator : MonoBehaviour
     public TextMeshProUGUI activate;
     public GameObject platform;
     public GameObject button;
-    private bool canBuild = false;
-    public static bool built = false;
+    private bool canBuild;
+    public static bool built;
     
     void Awake()
     {
         button.SetActive(false);
+    }
+
+    void Start()
+    {
+        canBuild = false;
+        built = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)

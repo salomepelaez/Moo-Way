@@ -8,15 +8,17 @@ public class Cow : MonoBehaviour
     private Transform target;
     private float distance;
    
-    public static bool floating = false;
+    public static bool floating;
 
-    private int counter = 0;
+    private int counter;
 
     public TextMeshProUGUI winner;
 
     private void Start()
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
+        counter = 0;
+        floating = false;
     }
 
     public void PickUpCow()

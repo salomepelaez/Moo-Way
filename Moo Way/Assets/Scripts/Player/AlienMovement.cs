@@ -10,8 +10,8 @@ public class AlienMovement : MonoBehaviour
 
     private float direction;
 
-    public static bool alienControl = false;
-    public static bool abducting = false;
+    public static bool alienControl;
+    public static bool abducting;
 
     private Animator anim;
 
@@ -20,6 +20,9 @@ public class AlienMovement : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        alienControl = false;
+        abducting = false;
     }
 
     void Update()
@@ -48,6 +51,9 @@ public class AlienMovement : MonoBehaviour
         }
 
         LimitateAxis();
+
+        Physics.IgnoreLayerCollision(8, 10, true);
+
     }
 
     private void LimitateAxis()

@@ -5,23 +5,28 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    private float speed = 5.0f;
+    private float speed = 3.5f;
     
     public Joystick joystick;
 
     private Vector2 direction;
 
-    public static bool canWalk = false;
-    public static bool getOut = false;
-    private bool empty = false;
+    public static bool canWalk;
+    public static bool getOut;
+    private bool empty;
     
-    private int fuel = 10;
+    private int fuel;
 
     public TextMeshProUGUI fuelText;
      
     void Start()
     {
         InvokeRepeating("LoseFuel", 5f, 1f);
+        fuel = 10;
+
+        canWalk = false;
+        getOut = false;
+        empty = false;
     }
 
     void Update()
@@ -31,7 +36,7 @@ public class Player : MonoBehaviour
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);
         }
-        
+
         LimitateAxis();
     }
 
