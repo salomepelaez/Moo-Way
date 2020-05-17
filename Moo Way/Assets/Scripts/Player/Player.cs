@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-    private float speed = 3.0f;
+    private float speed = 5.0f;
     
     public Joystick joystick;
 
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
     private bool empty = false;
     
     private int fuel = 10;
+
+    public TextMeshProUGUI fuelText;
      
     void Start()
     {
@@ -28,37 +31,8 @@ public class Player : MonoBehaviour
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);
         }
-
-        KeyboardMovement();
+        
         LimitateAxis();
-
-        Debug.Log("Combustible: " + fuel);
-    }
-
-    void KeyboardMovement()
-    {
-        if(AlienMovement.alienControl == false && Manager.inGame == true)
-        {
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.position += transform.up * speed * Time.deltaTime;
-            }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.position -= transform.up * speed * Time.deltaTime;
-            }
-
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.position += transform.right * speed * Time.deltaTime;
-            }
-
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.position -= transform.right * speed * Time.deltaTime;
-            }
-        }
     }
 
     private void LimitateAxis()
@@ -76,6 +50,11 @@ public class Player : MonoBehaviour
         else if (gameObject.transform.position.x <= -20f)
         {
             transform.position = new Vector3(-20f, transform.position.y, 0);
+        }
+
+        else if (gameObject.transform.position.x <= -163f)
+        {
+            transform.position = new Vector3(-163f, transform.position.y, 0);
         }
     }
 
@@ -103,7 +82,8 @@ public class Player : MonoBehaviour
             if(fuel <= 0)
             {
                 empty = true; 
-                getOut = true;      
+                getOut = true;  
+                StartCoroutine("FuelText");    
                 InvokeRepeating("GetFuel", 5f, 1f);    
             }    
         }
@@ -120,5 +100,14 @@ public class Player : MonoBehaviour
                 empty = false;
             }
         }
+    }
+
+    IEnumerator FuelText()
+    {
+        fuelText.text = "You ran out of energy, let the ship load";
+
+        yield return new WaitForSeconds(4);
+
+        fuelText.text = "";
     }
 }

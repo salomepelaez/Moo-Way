@@ -6,7 +6,7 @@ public class IddleOvni : StateMachineBehaviour
 {
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(Input.GetKeyDown(KeyCode.Y) && PlatformActivator.built == true || Cow.floating == true)
+        if(Cow.floating == true)
        {
             animator.SetBool("isAbducing", true);    
        }

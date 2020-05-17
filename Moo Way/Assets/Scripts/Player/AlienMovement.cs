@@ -45,8 +45,21 @@ public class AlienMovement : MonoBehaviour
             {
                 anim.SetBool("walking", false);            
             }
+        }
 
-            Debug.Log(direction);
+        LimitateAxis();
+    }
+
+    private void LimitateAxis()
+    {
+        if (gameObject.transform.position.x <= -20f)
+        {
+            transform.position = new Vector3(-20f, transform.position.y, 0);
+        }
+
+        else if (gameObject.transform.position.x <= -163f)
+        {
+            transform.position = new Vector3(-163f, transform.position.y, 0);
         }
     }
 }

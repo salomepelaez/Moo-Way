@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Cow : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Cow : MonoBehaviour
     public static bool floating = false;
 
     private int counter = 0;
+
+    public TextMeshProUGUI winner;
 
     private void Start()
     {
@@ -39,9 +42,9 @@ public class Cow : MonoBehaviour
             counter = counter + 1;
             Debug.Log(counter);
 
-            if(counter > 3)
+            if(counter == 3)
             {
-                Debug.Log("ganates");
+                winner.text = "Well done!";                
             }
         }
     }
