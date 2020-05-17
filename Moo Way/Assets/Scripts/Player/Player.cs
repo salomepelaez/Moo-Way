@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         InvokeRepeating("LoseFuel", 5f, 1f);
-        fuel = 10;
+        fuel = 25;
 
         canWalk = false;
         getOut = false;
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         {
             fuel = fuel + 1;
 
-            if(fuel >= 10)
+            if(fuel >= 25)
             {
                 empty = false;
             }
