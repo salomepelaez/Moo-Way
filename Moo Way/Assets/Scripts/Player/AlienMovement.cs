@@ -8,7 +8,7 @@ public class AlienMovement : MonoBehaviour
 
     public Joystick joystick;
 
-    private Vector2 direction;
+    private float direction;
 
     public static bool alienControl = false;
     public static bool abducting = false;
@@ -24,18 +24,54 @@ public class AlienMovement : MonoBehaviour
 
     void Update()
     {
-        ChangeControl();
-        Keyboard();
+        if(alienControl == true  && Manager.inGame == true)
+        {
+            direction = joystick.Horizontal * speed * Time.deltaTime;
+            transform.position += new Vector3(direction, 0f, 0f);
+
+            if(direction > 0.01f)
+            {
+                anim.SetBool("walking", true);
+                transform.localScale= new Vector2(0.22349f, 0.1635545f);
+            }
+
+            else if(direction < -0.01f)
+            {
+                anim.SetBool("walking", true);
+                transform.localScale= new Vector2(-0.22349f, 0.1635545f);
+            }
+
+            else
+            {
+                anim.SetBool("walking", false);            
+            }
+
+            Debug.Log(direction);
+        }
+
+        //Keyboard();
     }
 
-    void ChangeControl()
+    /*void ChangeControl()
     {
         if(alienControl == true  && Manager.inGame == true)
         {
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);
+
+            if(Input.GetAxis("Horizontal") < -0.1f)
+            {
+                anim.SetBool("walking", true);
+                transform.localScale= new Vector2(0.22349f, 0.1635545f);
+            }
+
+            else if(Input.GetAxis("Horizontal") < -0.1f)
+            {
+                anim.SetBool("walking", true);
+                transform.localScale= new Vector2(-0.22349f, 0.1635545f);
+            }
         }
-    }
+    }*/
 
     void Keyboard()
     {
@@ -51,12 +87,6 @@ public class AlienMovement : MonoBehaviour
             transform.position -= transform.right * speed * Time.deltaTime;
             transform.localScale= new Vector2(-0.22349f, 0.1635545f);
             anim.SetBool("walking", true);
-        }
-
-        else if(Input.GetKey(KeyCode.J))
-        {
-            anim.SetBool("isAttacking", false);
-            abducting = false;
         }
 
         else
