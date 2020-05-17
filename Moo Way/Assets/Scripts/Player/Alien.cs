@@ -16,6 +16,24 @@ public class Alien : MonoBehaviour
         player = FindObjectOfType<Player>().GetComponent<Transform>();
     }
 
+    void Update()
+    {
+        if(Player.getOut == true)
+        {
+            Player.getOut = false;
+            alien.SetActive(true);
+                                    
+            Vector3 pos = new Vector3();
+            pos.x = player.position.x;
+            pos.y = 0.3f;
+            pos.z = 0f;
+            alien.transform.position = pos;
+
+            isCreated = true; 
+            AlienMovement.alienControl = true;  
+        }
+    }
+
     public void AlienInstantiate()
     {
         if (isCreated == false && Player.canWalk == true && Manager.inGame == true)

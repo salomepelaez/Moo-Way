@@ -11,8 +11,16 @@ public class Player : MonoBehaviour
     private Vector2 direction;
 
     public static bool canWalk = false;
-    public static bool empty = false;
- 
+    public static bool getOut = false;
+    private bool empty = false;
+    
+    private int fuel = 10;
+     
+    void Start()
+    {
+        InvokeRepeating("LoseFuel", 5f, 1f);
+    }
+
     void Update()
     {
         if(AlienMovement.alienControl == false && Manager.inGame == true)
@@ -23,6 +31,8 @@ public class Player : MonoBehaviour
 
         KeyboardMovement();
         LimitateAxis();
+
+        Debug.Log("Combustible: " + fuel);
     }
 
     void KeyboardMovement()
@@ -82,6 +92,33 @@ public class Player : MonoBehaviour
         if(other.tag == "Ground")
         {
             canWalk = false;
+        }
+    }
+
+    void LoseFuel()
+    {
+        if(empty == false && AlienMovement.alienControl == false)
+        {
+            fuel = fuel - 1;   
+            if(fuel <= 0)
+            {
+                empty = true; 
+                getOut = true;      
+                InvokeRepeating("GetFuel", 5f, 1f);    
+            }    
+        }
+    }
+
+    void GetFuel()
+    {
+        if(empty == true)
+        {
+            fuel = fuel + 1;
+
+            if(fuel >= 10)
+            {
+                empty = false;
+            }
         }
     }
 }
