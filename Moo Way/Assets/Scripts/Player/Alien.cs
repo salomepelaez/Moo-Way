@@ -43,17 +43,18 @@ public class Alien : MonoBehaviour
     {
         if (isCreated == false && Player.canWalk == true && Manager.inGame == true)
         {
-            create.Play();
             alien.SetActive(true);
-                                    
+                            
+            isCreated = true; 
+            AlienMovement.alienControl = true;    
+
             Vector3 pos = new Vector3();
             pos.x = player.position.x;
             pos.y = -0.3f;
             pos.z = 0f;
             alien.transform.position = pos;
 
-            isCreated = true; 
-            AlienMovement.alienControl = true;           
+            create.Play();       
         }  
     }
 
