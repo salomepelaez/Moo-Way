@@ -2004,7 +2004,7 @@ MonoBehaviour:
   - Press Y to abduct
   - You must get close enough to pick up the cows
   - Press X to drop what you've collected
-  - ' the ship by pressing B,o the ground, you can exit the ship by pressing B,'
+  - When you're close to the ground, you can exit the ship by pressing B,
   - and teleport back to it using A
   - 
   button: {fileID: 1279568619}
