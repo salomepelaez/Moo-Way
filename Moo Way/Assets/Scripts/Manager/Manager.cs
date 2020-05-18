@@ -9,8 +9,12 @@ public class Manager : MonoBehaviour
 
     public TextMeshProUGUI gameOver;
 
+    public AudioSource music;
+    public AudioSource loser;
+
     void Start()
     {
+        music.Play();
         inGame = true;
     }
 
@@ -23,7 +27,9 @@ public class Manager : MonoBehaviour
     {
         if(inGame == false)
         { 
+            music.Stop();
             gameOver.text = "You have been caught!";
+            loser.Play();
         }
     }
 }

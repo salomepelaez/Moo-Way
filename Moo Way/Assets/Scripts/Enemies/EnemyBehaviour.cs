@@ -11,6 +11,8 @@ public class EnemyBehaviour : MonoBehaviour
     Transform target;
     Rigidbody2D rb2d;
 
+    public AudioSource police;
+
     private void Start()
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
@@ -64,7 +66,8 @@ public class EnemyBehaviour : MonoBehaviour
     void StartTimer()
     {
         if(IddleBehaviour.timer == true)
-        {    
+        {  
+            police.Play();  
             timeLeft -= Time.deltaTime;
 
                 if(timeLeft < 0)

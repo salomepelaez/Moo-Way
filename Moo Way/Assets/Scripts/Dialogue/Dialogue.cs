@@ -10,6 +10,8 @@ public class Dialogue : MonoBehaviour
     int index;
     public GameObject button;
 
+    public AudioSource okButton;
+
     private void Start()
     {
         First();        
@@ -32,6 +34,7 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()
     {
+        okButton.Play();
         if(index < phrases.Length - 1)
         {
             index++;

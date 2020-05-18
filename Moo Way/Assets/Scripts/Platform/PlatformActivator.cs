@@ -10,6 +10,8 @@ public class PlatformActivator : MonoBehaviour
     public GameObject button;
     private bool canBuild;
     public static bool built;
+
+    public AudioSource platformSound;
     
     void Awake()
     {
@@ -43,9 +45,10 @@ public class PlatformActivator : MonoBehaviour
     }
 
     public void ActivatePlatform()
-    {
+    {        
         if(canBuild == true && built == false)
         {
+            platformSound.Play();
             GameObject p = Instantiate(platform, Vector3.zero, Quaternion.identity);
             Vector3 pos = new Vector3();
             pos.x = 137.32f;

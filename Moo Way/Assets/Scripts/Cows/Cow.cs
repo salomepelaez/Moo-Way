@@ -14,6 +14,9 @@ public class Cow : MonoBehaviour
 
     public TextMeshProUGUI winner;
 
+    public AudioSource abduction;
+    public AudioSource cow;
+
     private void Start()
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
@@ -27,6 +30,7 @@ public class Cow : MonoBehaviour
 
         if(distance <= 3 && PlatformActivator.built == true)
         {
+            abduction.Play();
             floating = true;
         }
     }
@@ -34,12 +38,14 @@ public class Cow : MonoBehaviour
     public void DropCow()
     {
         floating = false;
+        cow.Play();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Platform")
         {
+            cow.Play();
             Destroy(this.gameObject);
             counter = counter + 1;
             Debug.Log(counter);

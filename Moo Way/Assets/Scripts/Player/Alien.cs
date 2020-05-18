@@ -10,6 +10,9 @@ public class Alien : MonoBehaviour
 
     private Transform player;
 
+    public AudioSource create;
+    public AudioSource goBack;
+
     void Start()
     {
         alien.SetActive(false);
@@ -40,6 +43,7 @@ public class Alien : MonoBehaviour
     {
         if (isCreated == false && Player.canWalk == true && Manager.inGame == true)
         {
+            create.Play();
             alien.SetActive(true);
                                     
             Vector3 pos = new Vector3();
@@ -56,7 +60,8 @@ public class Alien : MonoBehaviour
     public void GoBack()
     {
         if(isCreated == true && Manager.inGame == true)
-        {            
+        {      
+            goBack.Play();      
             isCreated = false;
             Player.canWalk = false;
             AlienMovement.alienControl = false;  
