@@ -51,7 +51,7 @@ public class PlatformActivator : MonoBehaviour
             platformSound.Play();
             GameObject p = Instantiate(platform, Vector3.zero, Quaternion.identity);
             Vector3 pos = new Vector3();
-            pos.x = 137.32f;
+            pos.x = -9.4f;
             pos.y = -0.6f;
             pos.z = 0;
             p.transform.position = pos;

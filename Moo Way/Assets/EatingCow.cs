@@ -6,7 +6,6 @@ public class EatingCow : StateMachineBehaviour
 {
     private Transform target;
     private float distance;
-    public AudioSource abduction;
     private Rigidbody2D rb;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -21,8 +20,6 @@ public class EatingCow : StateMachineBehaviour
 
        if(distance <= 3 && PlatformActivator.built == true && Cow.floating == true)
        {
-            //abduction.Play();
-
             animator.SetBool("isFloating", true);    
             rb.gravityScale = 0;        
        }
