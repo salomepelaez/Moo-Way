@@ -10,11 +10,10 @@ public class Cow : MonoBehaviour
    
     public static bool floating;
 
-    private int counter;
+    public static int counter;
 
     public TextMeshProUGUI winner;
 
-    public AudioSource abduction;
     public AudioSource cow;
 
     private void Start()
@@ -30,7 +29,6 @@ public class Cow : MonoBehaviour
 
         if(distance <= 3 && PlatformActivator.built == true)
         {
-            abduction.Play();
             floating = true;
         }
     }

@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour
 
     public AudioSource music;
     public AudioSource loser;
+    public AudioSource lose;
 
     void Start()
     {
@@ -20,16 +21,12 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        GameOver();
+        if(inGame == false)
+            GameOver();
     }
 
     void GameOver()
     {
-        if(inGame == false)
-        { 
-            music.Stop();
-            gameOver.text = "You have been caught!";
-            loser.Play();
-        }
+        gameOver.text = "You have been caught!";        
     }
 }

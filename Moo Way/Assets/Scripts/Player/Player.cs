@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
     void LoseFuel()
     {
-        if(empty == false && AlienMovement.alienControl == false)
+        if(Manager.inGame == true && empty == false && AlienMovement.alienControl == false)
         {
             fuel = fuel - 1;   
             if(fuel <= 0)
