@@ -1293,6 +1293,7 @@ GameObject:
   - component: {fileID: 183453633}
   - component: {fileID: 183453632}
   - component: {fileID: 183453631}
+  - component: {fileID: 183453634}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -1410,6 +1411,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183453629}
   m_CullTransparentMesh: 0
+--- !u!114 &183453634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183453629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 1
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters: []
+    m_Name: 
 --- !u!1 &187279694
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,6 +4563,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4638,6 +4670,36 @@ Transform:
   m_Father: {fileID: 1712045157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 2
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters: []
+    m_Name: FistLevel
 --- !u!1 &536328000
 GameObject:
   m_ObjectHideFlags: 0
@@ -17632,6 +17694,11 @@ PrefabInstance:
       propertyPath: loser
       value: 
       objectReference: {fileID: 1654558201}
+    - target: {fileID: 745681281290889001, guid: bd920a6a440ffe3488497fa43341ad42,
+        type: 3}
+      propertyPath: cop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5207768960465143935, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: moveSpots.Array.data[0]
@@ -17645,7 +17712,7 @@ PrefabInstance:
     - target: {fileID: 8162646061278901565, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: m_Name
-      value: Police (1)
+      value: Police1
       objectReference: {fileID: 0}
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
@@ -17685,7 +17752,7 @@ PrefabInstance:
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
@@ -19977,9 +20044,9 @@ Transform:
   m_LocalPosition: {x: -131.53485, y: 3.0291436, z: -26.436201}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 961560130}
   - {fileID: 992718323}
   - {fileID: 1256792791}
+  - {fileID: 961560130}
   m_Father: {fileID: 187279695}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20000,6 +20067,11 @@ PrefabInstance:
       propertyPath: loser
       value: 
       objectReference: {fileID: 1654558201}
+    - target: {fileID: 745681281290889001, guid: bd920a6a440ffe3488497fa43341ad42,
+        type: 3}
+      propertyPath: cop
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5207768960465143935, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: moveSpots.Array.data[0]
@@ -20013,7 +20085,7 @@ PrefabInstance:
     - target: {fileID: 8162646061278901565, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: m_Name
-      value: Police (2)
+      value: Police3
       objectReference: {fileID: 0}
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
@@ -20053,7 +20125,7 @@ PrefabInstance:
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
@@ -24311,6 +24383,11 @@ PrefabInstance:
       propertyPath: loser
       value: 
       objectReference: {fileID: 1654558201}
+    - target: {fileID: 745681281290889001, guid: bd920a6a440ffe3488497fa43341ad42,
+        type: 3}
+      propertyPath: cop
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5207768960465143935, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: moveSpots.Array.data[0]
@@ -24324,7 +24401,7 @@ PrefabInstance:
     - target: {fileID: 8162646061278901565, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: m_Name
-      value: Police
+      value: Police2
       objectReference: {fileID: 0}
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
@@ -24364,7 +24441,7 @@ PrefabInstance:
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8162646061278901566, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}

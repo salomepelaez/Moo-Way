@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
     Rigidbody2D rb2d;
 
     public AudioSource police;
+    public int cop;
 
     private void Start()
     {
@@ -73,6 +75,10 @@ public class EnemyBehaviour : MonoBehaviour
                 if(timeLeft < 0)
                 {
                     Manager.inGame = false;
+                    Analytics.CustomEvent("Death", new Dictionary<string, object>
+                    {
+                        { "Police", cop },
+                    });
                 }
         }
 

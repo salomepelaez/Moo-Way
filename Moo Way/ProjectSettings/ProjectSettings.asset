@@ -743,10 +743,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: a049df2d-5083-4407-832c-a27d4b859510
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Moo Way
+  organizationId: spsalome
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
