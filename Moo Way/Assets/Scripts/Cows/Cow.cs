@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using TMPro;
 
 public class Cow : MonoBehaviour
 {
     private Transform target;
     private float distance;
+    private float timer;
    
     public static bool floating;
 
@@ -21,6 +23,12 @@ public class Cow : MonoBehaviour
         target = FindObjectOfType<Player>().GetComponent<Transform>();
         counter = 0;
         floating = false;
+        InvokeRepeating("TimerCount", 1f, 1f);
+    }
+
+    private void Update()
+    {
+        Debug.Log(timer);
     }
 
     public void PickUpCow()
@@ -50,8 +58,18 @@ public class Cow : MonoBehaviour
 
             if(counter == 3)
             {
-                winner.text = "Well done!";                
+                winner.text = "Well done!";   
+                CancelInvoke("TimerCount"); 
+                Analytics.CustomEvent("Time", new Dictionary<string, object>
+                {
+                    { "Seconds", timer },
+                });            
             }
         }
+    }
+
+    void TimerCount()
+    {
+        timer = timer + 1;
     }
 }
