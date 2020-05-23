@@ -8,9 +8,10 @@ public class Cow : MonoBehaviour
 {
     private Transform target;
     private float distance;
-    private float timer;
+    private Manager man;
    
     public static bool floating;
+    public bool won;
 
     public static int counter;
 
@@ -18,17 +19,13 @@ public class Cow : MonoBehaviour
 
     public AudioSource cow;
 
-    private void Start()
+    private void Awake()
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
         counter = 0;
         floating = false;
-        InvokeRepeating("TimerCount", 1f, 1f);
-    }
-
-    private void Update()
-    {
-        Debug.Log(timer);
+        won = false;
+        man = GetComponent<Manager>();
     }
 
     public void PickUpCow()
@@ -59,17 +56,14 @@ public class Cow : MonoBehaviour
             if(counter == 3)
             {
                 winner.text = "Well done!";   
-                CancelInvoke("TimerCount"); 
+                man.StopTimer(); 
                 Analytics.CustomEvent("Time", new Dictionary<string, object>
                 {
-                    { "Seconds", timer },
+                    { "Seconds", man.timer },
                 });            
             }
         }
     }
 
-    void TimerCount()
-    {
-        timer = timer + 1;
-    }
+    
 }
