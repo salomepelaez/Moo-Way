@@ -68,4 +68,12 @@ public class AlienMovement : MonoBehaviour
             transform.position = new Vector3(-163f, transform.position.y, 0);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other == gameObject.GetComponent<EnemyBehaviour>())
+        {
+            Debug.Log("aaa");
+        }
+    }
 }

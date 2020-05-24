@@ -2066,10 +2066,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9fc03ce8cb479488894b1450e866d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
   gameOver: {fileID: 1689916226}
   music: {fileID: 1499985216}
   loser: {fileID: 427682945}
   lose: {fileID: 1654558201}
+  timer: 0
 --- !u!1 &275159893
 GameObject:
   m_ObjectHideFlags: 3
@@ -4508,9 +4510,7 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 1584032588}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 299105054}
-  - {fileID: 1172642219}
+  m_ChildCameras: []
   m_Instructions:
   - m_FullHash: 1796901881
     m_VirtualCamera: {fileID: 299105054}
@@ -4563,7 +4563,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4640,7 +4639,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.6715271
+  orthographic size: 2.43
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4664,42 +4663,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -157.58, y: 4.217453, z: -9.7701845}
+  m_LocalPosition: {x: -157.5, y: -0.33254677, z: -9.7701845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1712045157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Trigger:
-    m_IsTriggerExpanded: 1
-    m_Type: 0
-    m_LifecycleEvent: 2
-    m_ApplyRules: 0
-    m_Rules:
-      m_Rules: []
-    m_TriggerBool: 0
-    m_InitTime: 5
-    m_RepeatTime: 5
-    m_Repetitions: 0
-    repetitionCount: 0
-  m_EventPayload:
-    m_IsEventExpanded: 1
-    m_StandardEventType: CustomEvent
-    m_Parameters:
-      m_Parameters: []
-    m_Name: FistLevel
 --- !u!1 &536328000
 GameObject:
   m_ObjectHideFlags: 0
@@ -6503,6 +6472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f038654e4834a91479e1ee2fe97aaebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  won: 0
   winner: {fileID: 1562201758}
   cow: {fileID: 492499040}
 --- !u!114 &747473391 stripped
@@ -17684,6 +17654,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1348540454}
     m_Modifications:
+    - target: {fileID: -7694413313133384600, guid: bd920a6a440ffe3488497fa43341ad42,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -1.0054185
+      objectReference: {fileID: 0}
+    - target: {fileID: -7694413313133384600, guid: bd920a6a440ffe3488497fa43341ad42,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.65829587
+      objectReference: {fileID: 0}
+    - target: {fileID: -7694413313133384600, guid: bd920a6a440ffe3488497fa43341ad42,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 10.437172
+      objectReference: {fileID: 0}
     - target: {fileID: 745681281290889001, guid: bd920a6a440ffe3488497fa43341ad42,
         type: 3}
       propertyPath: police
@@ -23214,6 +23199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f038654e4834a91479e1ee2fe97aaebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  won: 0
   winner: {fileID: 1562201758}
   cow: {fileID: 492499040}
 --- !u!114 &1850145108 stripped
@@ -23958,6 +23944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f038654e4834a91479e1ee2fe97aaebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  won: 0
   winner: {fileID: 1562201758}
   cow: {fileID: 492499040}
 --- !u!114 &2040952350 stripped

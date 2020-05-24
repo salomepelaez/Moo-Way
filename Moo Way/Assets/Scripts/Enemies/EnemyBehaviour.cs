@@ -15,10 +15,15 @@ public class EnemyBehaviour : MonoBehaviour
     public AudioSource police;
     public int cop;
 
-    private void Start()
+    Manager manager;
+    GameObject man;
+
+    public void Start()
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
+        man = GameObject.Find("Manager");
+        manager = man.GetComponent<Manager>();
 
         enemySpeed = 3f;
         timeLeft = 10.0f;
@@ -72,14 +77,15 @@ public class EnemyBehaviour : MonoBehaviour
             police.Play();  
             timeLeft -= Time.deltaTime;
 
-                if(timeLeft < 0)
+            if(timeLeft < 0)
+            {
+                manager.dead = true;
+                
+                Analytics.CustomEvent("Death", new Dictionary<string, object>
                 {
-                    Manager.inGame = false;
-                    Analytics.CustomEvent("Death", new Dictionary<string, object>
-                    {
-                        { "Police", cop },
-                    });
-                }
+                    { "Death", "by being trapped" },
+                });
+            }
         }
 
         else 
