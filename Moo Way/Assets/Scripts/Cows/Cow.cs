@@ -60,10 +60,7 @@ public class Cow : MonoBehaviour
             {
                 winner.text = "Well done!";   
                 manager.StopTimer(); 
-                Analytics.CustomEvent("Time", new Dictionary<string, object>
-                {
-                    { "Seconds", manager.timer },
-                });            
+                Analytics.CustomEvent("Winner");      
             }
         }
     }

@@ -10,12 +10,16 @@ public class Manager : MonoBehaviour
     public bool dead;
 
     public TextMeshProUGUI gameOver;
+    public TextMeshProUGUI timerText;
 
     public AudioSource music;
     public AudioSource loser;
     public AudioSource lose;
 
     public float timer;
+    private int seconds;
+    private int minutes;
+    private string timerString;
 
     private Cow cow;
     private EnemyBehaviour enemy;
@@ -27,6 +31,7 @@ public class Manager : MonoBehaviour
         music.Play();
         inGame = true;
         dead = false;
+        timer = 300f;
 
         InvokeRepeating("TimerCount", 1f, 1f);
     }
@@ -34,7 +39,6 @@ public class Manager : MonoBehaviour
     void Update()
     {
         GameOver();
-        Debug.Log(timer);
     }
 
     public void GameOver()
@@ -50,9 +54,14 @@ public class Manager : MonoBehaviour
 
     public void TimerCount()
     {
-        timer = timer + 1;  
+        timer = timer - 1;  
+        seconds = (int)(timer % 60);
+        minutes = (int)(timer / 60) % 60;
 
-        if(timer > 240)
+        timerString = string.Format("{0:0}:{1:0}", minutes, seconds);
+        timerText.text = timerString;
+
+        if(timer < 0)
         {
             gameOver.text = "You ran out of time!";
             inGame = false;
