@@ -8,6 +8,7 @@ public class Manager : MonoBehaviour
 {
     public static bool inGame;
     public bool dead;
+    public bool seen;
 
     public TextMeshProUGUI gameOver;
     public TextMeshProUGUI timerText;
@@ -28,11 +29,15 @@ public class Manager : MonoBehaviour
     {
         cow = GetComponent<Cow>();
         enemy = GetComponent<EnemyBehaviour>();
-        music.Play();
         inGame = true;
         dead = false;
-        timer = 300f;
+        seen = false;
+        timer = 300f;        
+    }
 
+    void Start()
+    {
+        music.Play();
         InvokeRepeating("TimerCount", 1f, 1f);
     }
 
