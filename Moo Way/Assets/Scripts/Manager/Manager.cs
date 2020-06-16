@@ -7,6 +7,7 @@ using TMPro;
 public class Manager : MonoBehaviour
 {
     public static Manager Instance;
+
     public bool inGame;
     public bool dead;
     public bool seen;
@@ -35,7 +36,7 @@ public class Manager : MonoBehaviour
         Instance = this;
         cow = GetComponent<Cow>();
         enemy = GetComponent<EnemyBehaviour>();
-        inGame = true;
+        inGame = false;
         dead = false;
         seen = false;
         timer = 300f;        
@@ -44,11 +45,13 @@ public class Manager : MonoBehaviour
     void Start()
     {
         music.Play();
-        InvokeRepeating("TimerCount", 1f, 1f);
     }
 
     void Update()
     {
+        if(inGame == true)
+            TimerCount();
+
         GameOver();
     }
 
@@ -65,11 +68,11 @@ public class Manager : MonoBehaviour
 
     public void TimerCount()
     {
-        timer = timer - 1;  
+        timer = timer - Time.deltaTime;  
         seconds = (int)(timer % 60);
         minutes = (int)(timer / 60) % 60;
 
-        timerString = string.Format("{0:0}:{1:0}", minutes, seconds);
+        timerString = string.Format("{00:00}:{01:00}", minutes, seconds);
         timerText.text = timerString;
 
         if(timer < 0)

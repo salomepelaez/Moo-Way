@@ -12,8 +12,12 @@ public class Dialogue : MonoBehaviour
 
     public AudioSource okButton;
 
+    Manager manager;
+
     private void Start()
     {
+        manager = Manager.Instance;
+
         First();        
     }    
 
@@ -49,7 +53,8 @@ public class Dialogue : MonoBehaviour
         if (index == phrases.Length - 1)
         {
             button.SetActive(false);  
-            intro.text = "";                             
+            intro.text = "";   
+            manager.inGame = true;                          
         }        
     }
 }
