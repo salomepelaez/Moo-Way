@@ -11,8 +11,16 @@ public class Patrol : MonoBehaviour
     public Transform[] moveSpots;
     private int randomSpot;
 
+    Manager manager;
+
+    void Awake()
+    {
+    }
+
     void Start()
     {
+        manager = Manager.Instance;
+
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
     }
@@ -21,7 +29,7 @@ public class Patrol : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
-        if(Manager.inGame == true)
+        if(manager.inGame == true)
         {
             if(Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
             {

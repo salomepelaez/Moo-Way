@@ -6,9 +6,14 @@ using TMPro;
 
 public class Manager : MonoBehaviour
 {
-    public static bool inGame;
+    public static Manager Instance;
+    public bool inGame;
     public bool dead;
     public bool seen;
+    public bool built;
+    public bool isCreated;
+    public bool canWalk;
+    public bool getOut;
 
     public TextMeshProUGUI gameOver;
     public TextMeshProUGUI timerText;
@@ -27,6 +32,7 @@ public class Manager : MonoBehaviour
 
     public void Awake()
     {
+        Instance = this;
         cow = GetComponent<Cow>();
         enemy = GetComponent<EnemyBehaviour>();
         inGame = true;

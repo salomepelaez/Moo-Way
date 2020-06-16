@@ -27,15 +27,14 @@ public class Cow : MonoBehaviour
         counter = 0;
         floating = false;
         won = false;
-        man = GameObject.Find("Manager");
-        manager = man.GetComponent<Manager>();
+        manager = Manager.Instance;
     }
 
     public void PickUpCow()
     {
         distance = Vector2.Distance(transform.position, target.position);
 
-        if(distance <= 3 && PlatformActivator.built == true)
+        if(distance <= 3 && manager.built == true)
         {
             floating = true;
         }

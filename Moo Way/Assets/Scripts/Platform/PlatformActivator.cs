@@ -8,27 +8,31 @@ public class PlatformActivator : MonoBehaviour
     public TextMeshProUGUI activate;
     public GameObject platform;
     public GameObject button;
+
     private bool canBuild;
-    public static bool built;
+
 
     public AudioSource platformSound;
+
+    private Manager manager;
     
     void Awake()
     {
+        manager = Manager.Instance;
         button.SetActive(false);
     }
 
     void Start()
     {
         canBuild = false;
-        built = false;
+        manager.built = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Activator" && built == false)
+        if(other.tag == "Activator" && manager.built == false)
         {
-            activate.text = "Press the button to build the teletransportation platform";
+            activate.text = "Build the teletransportation platform";
             button.SetActive(true);
             canBuild = true;
         }
@@ -36,7 +40,7 @@ public class PlatformActivator : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Activator" || built == true)
+        if(other.tag == "Activator" || manager.built == true)
         {
             activate.text = "";
             button.SetActive(false);
@@ -46,7 +50,7 @@ public class PlatformActivator : MonoBehaviour
 
     public void ActivatePlatform()
     {        
-        if(canBuild == true && built == false)
+        if(canBuild == true && manager.built == false)
         {
             platformSound.Play();
             GameObject p = Instantiate(platform, Vector3.zero, Quaternion.identity);
@@ -56,7 +60,7 @@ public class PlatformActivator : MonoBehaviour
             pos.z = 0;
             p.transform.position = pos;
 
-            built = true;
+            manager.built = true;
         }
     }
 }

@@ -6,26 +6,31 @@ public class Alien : MonoBehaviour
 {
     public GameObject alien;
 
-    public static bool isCreated;
-
     private Transform player;
 
     public AudioSource create;
     public AudioSource goBack;
+
+    Manager manager;
+    
+    void Awake()
+    {
+        manager = Manager.Instance;
+    }
 
     void Start()
     {
         alien.SetActive(false);
         player = FindObjectOfType<Player>().GetComponent<Transform>();
 
-        isCreated = false;
+        manager.isCreated = false;
     }
 
     void Update()
     {
-        if(Player.getOut == true)
+        if(manager.getOut == true)
         {
-            Player.getOut = false;
+            manager.getOut = false;
             alien.SetActive(true);
                                     
             Vector3 pos = new Vector3();
@@ -34,18 +39,19 @@ public class Alien : MonoBehaviour
             pos.z = 0f;
             alien.transform.position = pos;
 
-            isCreated = true; 
+            manager.isCreated = true; 
             AlienMovement.alienControl = true;  
         }
     }
 
     public void AlienInstantiate()
     {
-        if (isCreated == false && Player.canWalk == true && Manager.inGame == true)
+        if (manager.isCreated == false && manager.canWalk == true && manager.inGame == true)
         {
             alien.SetActive(true);
                             
-            isCreated = true; 
+            manager.isCreated = true; 
+
             AlienMovement.alienControl = true;    
 
             Vector3 pos = new Vector3();
@@ -60,11 +66,11 @@ public class Alien : MonoBehaviour
 
     public void GoBack()
     {
-        if(isCreated == true && Manager.inGame == true)
+        if(manager.isCreated == true && manager.inGame == true)
         {      
             goBack.Play();      
-            isCreated = false;
-            Player.canWalk = false;
+            manager.isCreated = false;
+            manager.canWalk = false;
             AlienMovement.alienControl = false;  
             alien.SetActive(false);
         }    

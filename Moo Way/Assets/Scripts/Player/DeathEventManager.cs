@@ -7,6 +7,13 @@ public class DeathEventManager : MonoBehaviour
 {
     public int cop;
     
+    Manager manager;
+
+    void Awake()
+    {
+        manager = Manager.Instance;
+    }
+
     void Update()
     {
         GameOver();
@@ -14,7 +21,7 @@ public class DeathEventManager : MonoBehaviour
 
     void GameOver()
     {
-        if(Manager.inGame == false)
+        if(manager.inGame == false)
         {
             Analytics.CustomEvent("Death", new Dictionary<string, object>
             {

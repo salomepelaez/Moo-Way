@@ -17,8 +17,11 @@ public class AlienMovement : MonoBehaviour
 
     public GameObject alien;
 
+    Manager manager;
+
     void Awake()
     {
+        manager = Manager.Instance;
         anim = GetComponent<Animator>();
 
         alienControl = false;
@@ -27,7 +30,7 @@ public class AlienMovement : MonoBehaviour
 
     void Update()
     {
-        if(alienControl == true  && Manager.inGame == true)
+        if(alienControl == true  && manager.inGame == true)
         {
             direction = joystick.Horizontal * speed * Time.deltaTime;
             transform.position += new Vector3(direction, 0f, 0f);

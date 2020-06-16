@@ -11,27 +11,32 @@ public class Player : MonoBehaviour
 
     private Vector2 direction;
 
-    public static bool canWalk;
-    public static bool getOut;
     private bool empty;
     
     private int fuel;
 
     public TextMeshProUGUI fuelText;
-     
+
+    Manager manager;
+    
+    void Awake()
+    {
+        manager = Manager.Instance;
+    }
+
     void Start()
     {
         InvokeRepeating("LoseFuel", 5f, 1f);
         fuel = 25;
 
-        canWalk = false;
-        getOut = false;
+        manager.canWalk = false;
+        manager.getOut = false;
         empty = false;
     }
 
     void Update()
     {
-        if(AlienMovement.alienControl == false && Manager.inGame == true)
+        if(AlienMovement.alienControl == false && manager.inGame == true)
         {
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);
@@ -67,7 +72,7 @@ public class Player : MonoBehaviour
     {
         if(other.tag == "Ground")
         {
-            canWalk = true;
+            manager.canWalk = true;
         }
     }
 
@@ -75,19 +80,19 @@ public class Player : MonoBehaviour
     {
         if(other.tag == "Ground")
         {
-            canWalk = false;
+            manager.canWalk = false;
         }
     }
 
     void LoseFuel()
     {
-        if(Manager.inGame == true && empty == false && AlienMovement.alienControl == false)
+        if(manager.inGame == true && empty == false && AlienMovement.alienControl == false)
         {
             fuel = fuel - 1;   
             if(fuel <= 0)
             {
                 empty = true; 
-                getOut = true;  
+                manager.getOut = true;  
                 StartCoroutine("FuelText");    
                 InvokeRepeating("GetFuel", 5f, 1f);    
             }    

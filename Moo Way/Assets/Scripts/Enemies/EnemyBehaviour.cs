@@ -22,8 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
-        man = GameObject.Find("Manager");
-        manager = man.GetComponent<Manager>();
+        manager = Manager.Instance;
 
         enemySpeed = 3f;
         timeLeft = 10.0f;
@@ -33,7 +32,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, target.position);
 
-        if(distance <= 5 && Manager.inGame == true)
+        if(distance <= 5 && manager.inGame == true)
         {
             GetTarget();
         }
