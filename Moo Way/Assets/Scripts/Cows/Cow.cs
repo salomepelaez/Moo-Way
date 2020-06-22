@@ -9,10 +9,7 @@ public class Cow : MonoBehaviour
     private Transform target;
     private float distance;
    
-    public static bool floating;
     public bool won;
-
-    public static int counter;
 
     public TextMeshProUGUI winner;
 
@@ -23,11 +20,11 @@ public class Cow : MonoBehaviour
 
     private void Awake()
     {
-        target = FindObjectOfType<Player>().GetComponent<Transform>();
-        counter = 0;
-        floating = false;
+        target = FindObjectOfType<Player>().GetComponent<Transform>();        
         won = false;
         manager = Manager.Instance;
+        manager.cowCounter = 0;
+        manager.floating = false;
     }
 
     public void PickUpCow()
@@ -36,13 +33,13 @@ public class Cow : MonoBehaviour
 
         if(distance <= 3 && manager.built == true)
         {
-            floating = true;
+            manager.floating = true;
         }
     }
 
     public void DropCow()
     {
-        floating = false;
+        manager.floating = false;
         cow.Play();
     }
 
@@ -52,10 +49,10 @@ public class Cow : MonoBehaviour
         {
             cow.Play();
             Destroy(this.gameObject);
-            counter = counter + 1;
-            Debug.Log(counter);
+            manager.cowCounter = manager.cowCounter + 1;
+            Debug.Log(manager.cowCounter);
 
-            if(counter == 3)
+            if(manager.cowCounter == 3)
             {
                 winner.text = "Well done!";   
                 manager.StopTimer(); 

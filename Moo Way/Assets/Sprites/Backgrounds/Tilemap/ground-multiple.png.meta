@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: 2a51e073fd3611a42961621819ee3047
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4846900479255800567
+    second: ground-multiple_0
+  - first:
+      213: 3005615416239133960
+    second: ground-multiple_1
+  - first:
+      213: -9007792979353505966
+    second: ground-multiple_2
+  - first:
+      213: 5655346269063565891
+    second: ground-multiple_3
+  - first:
+      213: 2835523687485170516
+    second: ground-multiple_4
+  - first:
+      213: -104761428413190651
+    second: ground-multiple_5
+  - first:
+      213: -2179968301234002505
+    second: ground-multiple_6
+  - first:
+      213: 2806384575856485415
+    second: ground-multiple_7
+  - first:
+      213: -1401079148950992747
+    second: ground-multiple_8
+  - first:
+      213: -5189624244034219462
+    second: ground-multiple_9
+  - first:
+      213: -6141969730249936585
+    second: ground-multiple_10
+  - first:
+      213: -3458701920266426404
+    second: ground-multiple_11
+  - first:
+      213: -2740036528568472546
+    second: ground-multiple_12
+  - first:
+      213: -3622747101673823529
+    second: ground-multiple_13
+  - first:
+      213: -942064781912055919
+    second: ground-multiple_14
+  - first:
+      213: 6319191734973767391
+    second: ground-multiple_15
+  - first:
+      213: -1842395744546881073
+    second: ground-multiple_16
+  - first:
+      213: -596723225483259234
+    second: ground-multiple_17
+  - first:
+      213: -684320097758949934
+    second: ground-multiple_18
+  - first:
+      213: -1078761528177352318
+    second: ground-multiple_19
+  - first:
+      213: 1102564770364681632
+    second: ground-multiple_20
+  - first:
+      213: 6644035074490138325
+    second: ground-multiple_21
+  - first:
+      213: 6092934975666975015
+    second: ground-multiple_22
+  - first:
+      213: 7627006614348276106
+    second: ground-multiple_23
+  - first:
+      213: 3071891741241932349
+    second: ground-multiple_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ground-multiple_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 525
+        width: 498
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa66bf4e46a34340800000000000000
+      internalID: 4846900479255800567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground-multiple_1
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 522
+        width: 526
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8051f50fb4716b920800000000000000
+      internalID: 3005615416239133960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground-multiple_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 498
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f6067b204edf280800000000000000
+      internalID: -9007792979353505966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground-multiple_3
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 0
+        width: 498
+        height: 522
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3425d59e773db7e40800000000000000
+      internalID: 5655346269063565891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

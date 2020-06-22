@@ -20,7 +20,7 @@ public class EatingCow : StateMachineBehaviour
     {
         distance = Vector2.Distance(animator.transform.position, target.position);
 
-       if(distance <= 3 && manager.built == true && Cow.floating == true)
+       if(distance <= 3 && manager.built == true && manager.floating == true)
        {
             animator.SetBool("isFloating", true);    
             rb.gravityScale = 0;        

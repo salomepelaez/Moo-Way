@@ -15,6 +15,9 @@ public class Manager : MonoBehaviour
     public bool isCreated;
     public bool canWalk;
     public bool getOut;
+    public bool floating;
+
+    public int cowCounter;
 
     public TextMeshProUGUI gameOver;
     public TextMeshProUGUI timerText;
@@ -24,8 +27,10 @@ public class Manager : MonoBehaviour
     public AudioSource lose;
 
     public float timer;
+
     private int seconds;
     private int minutes;
+
     private string timerString;
 
     private Cow cow;
