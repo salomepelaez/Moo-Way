@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -68,10 +69,17 @@ public class Manager : MonoBehaviour
         if(dead == true)
         {
             inGame = false;
-            gameOver.text = "You have been caught!"; 
-
             StopTimer(); 
+            StartCoroutine("RestartGame");
         }     
+    }
+
+    IEnumerator RestartGame()
+    {
+        gameOver.text = "You have been caught!"; 
+        yield return new WaitForSeconds(3f);
+        gameOver.text = "";
+        SceneManager.LoadScene("FirstLevel");
     }
 
     public void TimerCount()
