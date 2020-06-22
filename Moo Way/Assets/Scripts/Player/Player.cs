@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     
     private int fuel;
 
+    public GameObject particle;
+
     public TextMeshProUGUI fuelText;
 
     Manager manager;
@@ -32,6 +34,9 @@ public class Player : MonoBehaviour
         manager.canWalk = false;
         manager.getOut = false;
         empty = false;
+
+        particle.SetActive(false);
+
     }
 
     void Update()
@@ -43,6 +48,7 @@ public class Player : MonoBehaviour
         }
 
         LimitateAxis();
+        ActivateParticles();
     }
 
     private void LimitateAxis()
@@ -119,5 +125,16 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(4);
 
         fuelText.text = "";
+    }
+
+    void ActivateParticles()
+    {
+        if(manager.floating == true)
+        {
+            particle.SetActive(true);
+        }
+
+        else
+            particle.SetActive(false);
     }
 }
