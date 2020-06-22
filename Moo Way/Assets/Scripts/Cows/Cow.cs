@@ -16,8 +16,7 @@ public class Cow : MonoBehaviour
     public AudioSource cow;
 
     Manager manager;
-    GameObject man;
-
+    
     private void Awake()
     {
         target = FindObjectOfType<Player>().GetComponent<Transform>();        
@@ -50,16 +49,20 @@ public class Cow : MonoBehaviour
             cow.Play();
             Destroy(this.gameObject);
             manager.cowCounter = manager.cowCounter + 1;
-            Debug.Log(manager.cowCounter);
 
             if(manager.cowCounter == 3)
             {
-                winner.text = "Well done!";   
+                StartCoroutine("EscapeText");
                 manager.StopTimer(); 
-                Analytics.CustomEvent("Winner");      
+                Analytics.CustomEvent("All items collected");      
             }
         }
     }
 
-    
+    IEnumerator EscapeText()
+    {
+        winner.text = "Now escape from the police!";   
+        yield return new WaitForSeconds(4f);
+        winner.text = ""; 
+    }
 }

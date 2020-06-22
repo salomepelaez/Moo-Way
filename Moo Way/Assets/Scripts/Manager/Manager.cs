@@ -21,12 +21,14 @@ public class Manager : MonoBehaviour
 
     public TextMeshProUGUI gameOver;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI cowsLeft;
 
     public AudioSource music;
     public AudioSource loser;
     public AudioSource lose;
 
     public float timer;
+    public float lastTimer;
 
     private int seconds;
     private int minutes;
@@ -58,6 +60,7 @@ public class Manager : MonoBehaviour
             TimerCount();
 
         GameOver();
+        CowsCounter();
     }
 
     public void GameOver()
@@ -94,5 +97,11 @@ public class Manager : MonoBehaviour
     public void StopTimer()
     {
         CancelInvoke("TimerCount");        
+    }
+
+    public void CowsCounter()
+    {
+        cowsLeft.text = "Cows: " + cowCounter + "/3";
+        
     }
 }
