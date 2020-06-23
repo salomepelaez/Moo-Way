@@ -47,7 +47,7 @@ public class Manager : MonoBehaviour
         inGame = false;
         dead = false;
         seen = false;
-        timer = 300f;        
+        timer = 360f;        
     }
 
     void Start()
