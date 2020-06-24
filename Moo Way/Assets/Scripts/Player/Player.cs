@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public GameObject particle;
 
     public TextMeshProUGUI fuelText;
+    public GameObject wCanvas;
 
     Manager manager;
     
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
         empty = false;
 
         particle.SetActive(false);
-
+        wCanvas.SetActive(false);
     }
 
     void Update()
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
 
         LimitateAxis();
         ActivateParticles();
+        CheckIfWin();
     }
 
     private void LimitateAxis()
@@ -68,9 +70,9 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(-20f, transform.position.y, 0);
         }
 
-        else if (gameObject.transform.position.x <= -163f)
+        else if (gameObject.transform.position.x >= 156f)
         {
-            transform.position = new Vector3(-163f, transform.position.y, 0);
+            transform.position = new Vector3(156f, transform.position.y, 0);
         }
     }
 
@@ -136,5 +138,15 @@ public class Player : MonoBehaviour
 
         else
             particle.SetActive(false);
+    }
+
+    void CheckIfWin()
+    {
+        if(manager.cowCounter == 3 && gameObject.transform.position.x >= 156f)
+        {
+            Debug.Log("ganó de a mentis");
+            manager.inGame = false;
+            wCanvas.SetActive(true);
+        }
     }
 }
