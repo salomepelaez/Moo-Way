@@ -36,6 +36,7 @@ public class Manager : MonoBehaviour
 
     public GameObject pause;
     public GameObject settingsButton;
+    public GameObject helpButton;
 
     public float timer;
     public float lastTimer;
@@ -95,6 +96,7 @@ public class Manager : MonoBehaviour
         settingsButton.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
+        music.pitch = 0.4f;
     }
 
     public void ResumeGame()
@@ -102,14 +104,27 @@ public class Manager : MonoBehaviour
         pause.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
+        music.pitch = 1f;
     }
 
     public void Settings()
     {
-        pause.SetActive(false);
         settingsButton.SetActive(true);
+        pause.SetActive(false);
+        helpButton.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
+        music.pitch = 0.4f;
+    }
+
+    public void Help()
+    {
+        helpButton.SetActive(true);
+        pause.SetActive(false);
+        settingsButton.SetActive(false);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+        music.pitch = 0.4f;
     }
 
     public void GameOver()
