@@ -35,6 +35,7 @@ public class Manager : MonoBehaviour
     public AudioSource lose;
 
     public GameObject pause;
+    public GameObject settingsButton;
 
     public float timer;
     public float lastTimer;
@@ -91,6 +92,7 @@ public class Manager : MonoBehaviour
     void PauseGame()
     {
         pause.SetActive(true);
+        settingsButton.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
     }
@@ -100,6 +102,14 @@ public class Manager : MonoBehaviour
         pause.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
+    }
+
+    public void Settings()
+    {
+        pause.SetActive(false);
+        settingsButton.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
     }
 
     public void GameOver()
