@@ -111,7 +111,7 @@ public class Manager : MonoBehaviour
         Time.timeScale = 0f;
         gameIsPaused = true;
     }
-
+    
     public void GameOver()
     {         
         if(dead == true)
