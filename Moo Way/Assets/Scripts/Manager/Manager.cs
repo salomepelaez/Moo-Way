@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
     public bool cowsCollected;
     public bool alienControl;
     public bool abducting;
+    public bool gameIsPaused = false;
 
     public int cowCounter;
     public int fuel;
@@ -32,6 +33,8 @@ public class Manager : MonoBehaviour
     public AudioSource music;
     public AudioSource loser;
     public AudioSource lose;
+
+    public GameObject pause;
 
     public float timer;
     public float lastTimer;
@@ -70,6 +73,33 @@ public class Manager : MonoBehaviour
         GameOver();
         CowsCounter();
         CheckIfWon();
+    }
+
+    public void PauseButton()
+    {
+        if(gameIsPaused)
+        {
+            ResumeGame();
+        }
+
+        else
+        {
+            PauseGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        pause.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        pause.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
     }
 
     public void GameOver()
