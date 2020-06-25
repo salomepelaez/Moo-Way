@@ -27,4 +27,9 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("FirstLevel");
     }
 
+    public void Instructions()
+    {
+        startLevel.Play();
+        SceneManager.LoadScene("Instructions");
+    }
 }
