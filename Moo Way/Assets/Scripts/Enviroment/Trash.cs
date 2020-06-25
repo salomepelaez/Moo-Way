@@ -6,7 +6,7 @@ public class Trash : MonoBehaviour
 {
     Manager manager;
     
-    void Awake()
+    void Start()
     {
         manager = Manager.Instance;
     }
@@ -15,18 +15,21 @@ public class Trash : MonoBehaviour
     {
         if(other.gameObject.GetComponent<AlienMovement>() != null)
         {
-            InvokeRepeating("RecycleEnergy", 1f, 2f);
+            InvokeRepeating("RecycleEnergy", 1f, 3f);
            // Debug.Log(manager.fuel);
         }
     }
 
     void RecycleEnergy()
     {
-        manager.fuel = manager.fuel + 5;
-
-        if(manager.fuel >= 45)
+        if(manager.alienControl == true)
         {
-            manager.fuel = 45;
+            manager.fuel = manager.fuel + 5;
+
+            if(manager.fuel >= 45)
+            {
+                manager.fuel = 45;
+            }
         }
     }
 }
