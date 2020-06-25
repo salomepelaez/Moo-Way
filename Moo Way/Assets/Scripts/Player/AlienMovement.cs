@@ -16,7 +16,7 @@ public class AlienMovement : MonoBehaviour
 
     Manager manager;
 
-    void Awake()
+    void Start()
     {
         manager = Manager.Instance;
         anim = GetComponent<Animator>();
