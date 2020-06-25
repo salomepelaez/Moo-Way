@@ -50,10 +50,12 @@ public class Cow : MonoBehaviour
             Destroy(this.gameObject);
             manager.cowCounter = manager.cowCounter + 1;
 
-            if(manager.cowCounter == 3)
+            if(manager.cowCounter == 3 && manager.cowsCollected == false)
             {
                 StartCoroutine("EscapeText");
                 manager.StopTimer(); 
+                manager.cowsCollected = true;
+
                 Analytics.CustomEvent("All items collected");      
             }
         }
@@ -61,8 +63,8 @@ public class Cow : MonoBehaviour
 
     IEnumerator EscapeText()
     {
-        winner.text = "Now escape from the police!";   
-        yield return new WaitForSeconds(4f);
+        winner.text = "Now escape from the police!"; 
+        yield return new WaitForSeconds(4);
         winner.text = ""; 
     }
 }

@@ -18,6 +18,7 @@ public class Manager : MonoBehaviour
     public bool getOut;
     public bool floating;
     public bool bigWinner;
+    public bool cowsCollected;
 
     public int cowCounter;
 
@@ -49,6 +50,7 @@ public class Manager : MonoBehaviour
         dead = false;
         seen = false;
         bigWinner = false;
+        cowsCollected = false;
         timer = 420f;        
     }
 
@@ -119,7 +121,7 @@ public class Manager : MonoBehaviour
     {
         if(bigWinner == true)
         {
-            Debug.Log("si");
+            SceneManager.LoadScene("WinnerScene");
         }
     }
 }
