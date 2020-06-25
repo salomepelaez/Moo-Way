@@ -45,13 +45,12 @@ public class Player : MonoBehaviour
         {
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);
+            energyBar.SetMaxEnergy(manager.fuel);
         }
 
         LimitateAxis();
         ActivateParticles();
         CheckIfWin();
-
-        energyBar.SetMaxEnergy(manager.fuel);
     }
 
     private void LimitateAxis()
