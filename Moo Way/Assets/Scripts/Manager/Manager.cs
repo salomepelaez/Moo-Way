@@ -17,6 +17,7 @@ public class Manager : MonoBehaviour
     public bool canWalk;
     public bool getOut;
     public bool floating;
+    public bool bigWinner;
 
     public int cowCounter;
 
@@ -47,6 +48,7 @@ public class Manager : MonoBehaviour
         inGame = false;
         dead = false;
         seen = false;
+        bigWinner = false;
         timer = 420f;        
     }
 
@@ -62,6 +64,7 @@ public class Manager : MonoBehaviour
 
         GameOver();
         CowsCounter();
+        CheckIfWon();
     }
 
     public void GameOver()
@@ -109,7 +112,14 @@ public class Manager : MonoBehaviour
 
     public void CowsCounter()
     {
-        cowsLeft.text = "Cows: " + cowCounter + "/3";
-        
+        cowsLeft.text = "Cows: " + cowCounter + "/3";        
+    }
+
+    void CheckIfWon()
+    {
+        if(bigWinner == true)
+        {
+            Debug.Log("si");
+        }
     }
 }

@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     public GameObject particle;
 
     public TextMeshProUGUI fuelText;
-    public GameObject wCanvas;
 
     Manager manager;
     
@@ -37,7 +36,6 @@ public class Player : MonoBehaviour
         empty = false;
 
         particle.SetActive(false);
-        wCanvas.SetActive(false);
     }
 
     void Update()
@@ -146,7 +144,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("ganó de a mentis");
             manager.inGame = false;
-            wCanvas.SetActive(true);
+            manager.bigWinner = true;
         }
     }
 }
