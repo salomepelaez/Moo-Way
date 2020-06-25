@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI fuelText;
 
     Manager manager;
+
+    public EnergyBar energyBar;
     
     void Awake()
     {
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
     {
         InvokeRepeating("LoseFuel", 5f, 1f);
         manager.fuel = 45;
+        energyBar.SetMaxEnergy(manager.fuel);
 
         manager.canWalk = false;
         manager.getOut = false;
@@ -47,6 +50,8 @@ public class Player : MonoBehaviour
         LimitateAxis();
         ActivateParticles();
         CheckIfWin();
+
+        energyBar.SetMaxEnergy(manager.fuel);
     }
 
     private void LimitateAxis()
