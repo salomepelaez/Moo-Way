@@ -15,15 +15,18 @@ public class Trash : MonoBehaviour
     {
         if(other.gameObject.GetComponent<AlienMovement>() != null)
         {
-            StartCoroutine("Recycle");
-            Debug.Log(manager.fuel);
+            InvokeRepeating("RecycleEnergy", 1f, 2f);
+           // Debug.Log(manager.fuel);
         }
     }
 
-    IEnumerator Recycle()
+    void RecycleEnergy()
     {
         manager.fuel = manager.fuel + 5;
 
-        yield return new WaitForSeconds(5);
+        if(manager.fuel >= 45)
+        {
+            manager.fuel = 45;
+        }
     }
 }

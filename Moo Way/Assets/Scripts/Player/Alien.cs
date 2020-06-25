@@ -40,7 +40,7 @@ public class Alien : MonoBehaviour
             alien.transform.position = pos;
 
             manager.isCreated = true; 
-            AlienMovement.alienControl = true;  
+            manager.alienControl = true;  
         }
     }
 
@@ -52,7 +52,7 @@ public class Alien : MonoBehaviour
                             
             manager.isCreated = true; 
 
-            AlienMovement.alienControl = true;    
+            manager.alienControl = true;    
 
             Vector3 pos = new Vector3();
             pos.x = player.position.x;
@@ -71,7 +71,7 @@ public class Alien : MonoBehaviour
             goBack.Play();      
             manager.isCreated = false;
             manager.canWalk = false;
-            AlienMovement.alienControl = false;  
+            manager.alienControl = false;  
             alien.SetActive(false);
         }    
     }

@@ -19,6 +19,8 @@ public class Manager : MonoBehaviour
     public bool floating;
     public bool bigWinner;
     public bool cowsCollected;
+    public bool alienControl;
+    public bool abducting;
 
     public int cowCounter;
     public int fuel;

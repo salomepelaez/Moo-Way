@@ -9,10 +9,7 @@ public class AlienMovement : MonoBehaviour
     public Joystick joystick;
 
     private float direction;
-
-    public static bool alienControl;
-    public static bool abducting;
-
+   
     private Animator anim;
 
     public GameObject alien;
@@ -23,14 +20,11 @@ public class AlienMovement : MonoBehaviour
     {
         manager = Manager.Instance;
         anim = GetComponent<Animator>();
-
-        alienControl = false;
-        abducting = false;
     }
 
     void Update()
     {
-        if(alienControl == true  && manager.inGame == true)
+        if(manager.alienControl == true  && manager.inGame == true)
         {
             direction = joystick.Horizontal * speed * Time.deltaTime;
             transform.position += new Vector3(direction, 0f, 0f);

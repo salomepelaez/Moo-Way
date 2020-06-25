@@ -6,9 +6,11 @@ using UnityEngine.Playables;
 public class CinemachineScript : MonoBehaviour
 {
     public GameObject alienCamera;
+    Manager manager;
 
     void Awake()
     {
+        manager = Manager.Instance;
         alienCamera.SetActive(false);
     }
 
@@ -16,14 +18,15 @@ public class CinemachineScript : MonoBehaviour
     {
         ChangePlayerCamera();
     }
+    
     void ChangePlayerCamera()
     {
-        if(AlienMovement.alienControl == true)
+        if(manager.alienControl == true)
         {
             alienCamera.SetActive(true);
         }
 
-        else if(AlienMovement.alienControl == false)
+        else if(manager.alienControl == false)
         {
             alienCamera.SetActive(false);
         }

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(AlienMovement.alienControl == false && manager.inGame == true)
+        if(manager.alienControl == false && manager.inGame == true)
         {
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);
@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
         LimitateAxis();
         ActivateParticles();
         CheckIfWin();
+        Debug.Log(manager.fuel);
     }
 
     private void LimitateAxis()
@@ -90,7 +91,7 @@ public class Player : MonoBehaviour
 
     void LoseFuel()
     {
-        if(manager.inGame == true && empty == false && AlienMovement.alienControl == false)
+        if(manager.inGame == true && empty == false && manager.alienControl == false)
         {
             manager.fuel = manager.fuel - 1;   
             if(manager.fuel <= 0)
