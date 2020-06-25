@@ -11,25 +11,28 @@ public class Trash : MonoBehaviour
         manager = Manager.Instance;
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.GetComponent<AlienMovement>() != null)
-        {
-            InvokeRepeating("RecycleEnergy", 1f, 3f);
-           // Debug.Log(manager.fuel);
+        {    
+            manager.fuel = manager.fuel + 10;
+
+            if(manager.fuel >= 45)
+            {
+                manager.fuel = 45;
+            }     
+            
+            this.gameObject.SetActive(false);
         }
     }
 
     void RecycleEnergy()
     {
-        if(manager.alienControl == true)
-        {
-            manager.fuel = manager.fuel + 5;
+        manager.fuel = manager.fuel + 3;
 
-            if(manager.fuel >= 45)
-            {
-                manager.fuel = 45;
-            }
-        }
+        if(manager.fuel >= 45)
+        {
+            manager.fuel = 45;
+        }        
     }
 }
