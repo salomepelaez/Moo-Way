@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
         LimitateAxis();
         ActivateParticles();
         CheckIfWin();
-        Debug.Log(manager.fuel);
     }
 
     private void LimitateAxis()

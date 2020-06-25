@@ -23,6 +23,8 @@ public class Trash : MonoBehaviour
             }     
             
             this.gameObject.SetActive(false);
+
+            Debug.Log("+10" + manager.fuel);
         }
     }
 
