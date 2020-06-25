@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
     public bool cowsCollected;
 
     public int cowCounter;
+    public int fuel;
 
     public TextMeshProUGUI gameOver;
     public TextMeshProUGUI timerText;

@@ -12,8 +12,6 @@ public class Player : MonoBehaviour
     private Vector2 direction;
 
     private bool empty;
-    
-    private int fuel;
 
     public GameObject particle;
 
@@ -29,7 +27,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         InvokeRepeating("LoseFuel", 5f, 1f);
-        fuel = 25;
+        manager.fuel = 45;
 
         manager.canWalk = false;
         manager.getOut = false;
@@ -94,8 +92,8 @@ public class Player : MonoBehaviour
     {
         if(manager.inGame == true && empty == false && AlienMovement.alienControl == false)
         {
-            fuel = fuel - 1;   
-            if(fuel <= 0)
+            manager.fuel = manager.fuel - 1;   
+            if(manager.fuel <= 0)
             {
                 empty = true; 
                 manager.getOut = true;  
@@ -109,15 +107,15 @@ public class Player : MonoBehaviour
     {
         if(empty == true)
         {
-            fuel = fuel + 1;
+            manager.fuel = manager.fuel + 1;
 
-            if(fuel >= 25)
+            if(manager.fuel >= 45)
             {
                 empty = false;
             }
         }
     }
-
+   
     IEnumerator FuelText()
     {
         fuelText.text = "You ran out of energy, let the ship load";

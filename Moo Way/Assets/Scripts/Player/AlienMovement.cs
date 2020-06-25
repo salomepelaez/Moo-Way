@@ -72,11 +72,11 @@ public class AlienMovement : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
-        if(other == gameObject.GetComponent<EnemyBehaviour>())
+        if(other.gameObject.GetComponent<EnemyBehaviour>() != null)
         {
             Debug.Log("aaa");
         }
-    }
+    }*/
 }
