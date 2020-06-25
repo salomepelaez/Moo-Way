@@ -33,6 +33,7 @@ public class Manager : MonoBehaviour
     public AudioSource music;
     public AudioSource loser;
     public AudioSource lose;
+    public AudioSource buttons;
 
     public GameObject pause;
     public GameObject settingsButton;
@@ -92,8 +93,10 @@ public class Manager : MonoBehaviour
 
     public void PauseGame()
     {
+        buttons.Play();
         pause.SetActive(true);
         settingsButton.SetActive(false);
+        helpButton.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
         music.pitch = 0.4f;
@@ -101,6 +104,7 @@ public class Manager : MonoBehaviour
 
     public void ResumeGame()
     {
+        buttons.Play();
         pause.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
@@ -109,6 +113,7 @@ public class Manager : MonoBehaviour
 
     public void Settings()
     {
+        buttons.Play();
         settingsButton.SetActive(true);
         pause.SetActive(false);
         helpButton.SetActive(false);
@@ -119,9 +124,8 @@ public class Manager : MonoBehaviour
 
     public void Help()
     {
+        buttons.Play();
         helpButton.SetActive(true);
-        pause.SetActive(false);
-        settingsButton.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
         music.pitch = 0.4f;
@@ -133,6 +137,8 @@ public class Manager : MonoBehaviour
         {
             inGame = false;
             StopTimer(); 
+            music.Stop();
+            lose.Play();
             StartCoroutine("RestartGame");
         }     
     }
