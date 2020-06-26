@@ -2369,7 +2369,6 @@ GameObject:
   - component: {fileID: 183453633}
   - component: {fileID: 183453632}
   - component: {fileID: 183453631}
-  - component: {fileID: 183453634}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -2439,19 +2438,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 280579541}
+      - m_Target: {fileID: 269919315}
         m_MethodName: Restart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: Display_InterstitialAD
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2498,36 +2486,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183453629}
   m_CullTransparentMesh: 0
---- !u!114 &183453634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183453629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Trigger:
-    m_IsTriggerExpanded: 1
-    m_Type: 1
-    m_LifecycleEvent: 0
-    m_ApplyRules: 0
-    m_Rules:
-      m_Rules: []
-    m_TriggerBool: 0
-    m_InitTime: 5
-    m_RepeatTime: 5
-    m_Repetitions: 0
-    repetitionCount: 0
-  m_EventPayload:
-    m_IsEventExpanded: 1
-    m_StandardEventType: CustomEvent
-    m_Parameters:
-      m_Parameters: []
-    m_Name: 
 --- !u!1 &187279694
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,6 +3648,9 @@ MonoBehaviour:
   menu: {fileID: 472068508}
   restartButton: {fileID: 369309906}
   startLevel: {fileID: 1312809936}
+  button: {fileID: 0}
+  about: {fileID: 0}
+  credits: {fileID: 0}
 --- !u!224 &280579542
 RectTransform:
   m_ObjectHideFlags: 0

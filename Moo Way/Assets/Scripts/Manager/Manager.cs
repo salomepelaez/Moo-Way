@@ -56,11 +56,13 @@ public class Manager : MonoBehaviour
         Instance = this;
         cow = GetComponent<Cow>();
         enemy = GetComponent<EnemyBehaviour>();
-        inGame = false;
         dead = false;
         seen = false;
         bigWinner = false;
         cowsCollected = false;
+        alienControl = false;
+        gameIsPaused = false;
+
         timer = 420f;        
     }
 
@@ -69,6 +71,8 @@ public class Manager : MonoBehaviour
         music.Play();
         fuel = 45;
         currentFuel = fuel;
+        inGame = false;
+        Debug.Log(inGame);
     }
 
     void Update()
@@ -79,6 +83,15 @@ public class Manager : MonoBehaviour
         GameOver();
         CowsCounter();
         CheckIfWon();
+    }
+
+    public void Restart()
+    {   
+        pause.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        music.pitch = 1f;     
+        SceneManager.LoadScene("FirstLevel");
     }
 
     public void PauseButton()

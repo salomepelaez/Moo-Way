@@ -24,13 +24,7 @@ public class MenuManager : MonoBehaviour
         startLevel.Play();
         SceneManager.LoadScene("FirstLevel");
     }
-
-    public void Restart()
-    {
-        restartButton.Play();
-        SceneManager.LoadScene("FirstLevel");
-    }
-
+    
     public void Instructions()
     {
         startLevel.Play();

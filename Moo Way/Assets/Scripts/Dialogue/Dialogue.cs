@@ -54,7 +54,8 @@ public class Dialogue : MonoBehaviour
         {
             button.SetActive(false);  
             intro.text = "";   
-            manager.inGame = true;                          
+            manager.inGame = true; 
+            Debug.Log(manager.inGame);                         
         }        
     }
 }
