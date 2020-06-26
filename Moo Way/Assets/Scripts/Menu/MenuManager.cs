@@ -8,6 +8,10 @@ public class MenuManager : MonoBehaviour
     public AudioSource menu;
     public AudioSource restartButton;
     public AudioSource startLevel;
+    public AudioSource button;
+
+    public GameObject about;
+    public GameObject credits;
 
     public void BackToMenu()
     {
@@ -31,5 +35,25 @@ public class MenuManager : MonoBehaviour
     {
         startLevel.Play();
         SceneManager.LoadScene("Instructions");
+    }
+
+    public void AboutButton()
+    {
+        button.Play();
+        about.SetActive(true);
+        credits.SetActive(false);
+    }
+
+    public void CreditsButton()
+    {
+        button.Play();
+        credits.SetActive(true);
+        about.SetActive(false);
+    }
+
+    public void Leave()
+    {
+        button.Play();
+        about.SetActive(false);
     }
 }
