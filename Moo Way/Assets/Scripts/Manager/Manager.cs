@@ -25,6 +25,7 @@ public class Manager : MonoBehaviour
 
     public int cowCounter;
     public int fuel;
+    public int currentFuel;
 
     public TextMeshProUGUI gameOver;
     public TextMeshProUGUI timerText;
@@ -66,6 +67,8 @@ public class Manager : MonoBehaviour
     void Start()
     {
         music.Play();
+        fuel = 45;
+        currentFuel = fuel;
     }
 
     void Update()

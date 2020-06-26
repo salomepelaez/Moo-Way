@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         InvokeRepeating("LoseFuel", 5f, 1f);
-        manager.fuel = 45;
         energyBar.SetMaxEnergy(manager.fuel);
 
         manager.canWalk = false;
@@ -45,12 +44,14 @@ public class Player : MonoBehaviour
         {
             direction = joystick.Direction * speed * Time.deltaTime;
             transform.position += new Vector3(direction.x, direction.y, 0f);
-            energyBar.SetMaxEnergy(manager.fuel);
         }
 
         LimitateAxis();
         ActivateParticles();
         CheckIfWin();
+
+        //energyBar.SetEnergy(manager.currentFuel);
+
     }
 
     private void LimitateAxis()
@@ -96,7 +97,9 @@ public class Player : MonoBehaviour
     {
         if(manager.inGame == true && empty == false && manager.alienControl == false)
         {
-            manager.fuel = manager.fuel - 1;   
+            manager.fuel = manager.fuel - 1;               
+            energyBar.SetEnergy(manager.fuel);
+
             if(manager.fuel <= 0)
             {
                 empty = true; 
@@ -112,6 +115,7 @@ public class Player : MonoBehaviour
         if(empty == true)
         {
             manager.fuel = manager.fuel + 1;
+            energyBar.SetEnergy(manager.fuel);
 
             if(manager.fuel >= 45)
             {
