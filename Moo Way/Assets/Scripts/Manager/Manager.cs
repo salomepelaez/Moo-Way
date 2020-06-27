@@ -149,8 +149,6 @@ public class Manager : MonoBehaviour
         {
             inGame = false;
             StopTimer(); 
-            music.Stop();
-            lose.Play();
             StartCoroutine("RestartGame");
         }     
     }

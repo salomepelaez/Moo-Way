@@ -9,8 +9,6 @@ public class Cow : MonoBehaviour
     private Transform target;
     private float distance;
    
-    public bool won;
-
     public TextMeshProUGUI winner;
 
     public AudioSource cow;
@@ -19,8 +17,7 @@ public class Cow : MonoBehaviour
     
     private void Awake()
     {
-        target = FindObjectOfType<Player>().GetComponent<Transform>();        
-        won = false;
+        target = FindObjectOfType<Player>().GetComponent<Transform>();   
         manager = Manager.Instance;
         manager.cowCounter = 0;
         manager.floating = false;
@@ -30,7 +27,7 @@ public class Cow : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, target.position);
 
-        if(distance <= 3 && manager.built == true)
+        if(distance <= 3)// && manager.built == true)
         {
             manager.floating = true;
         }

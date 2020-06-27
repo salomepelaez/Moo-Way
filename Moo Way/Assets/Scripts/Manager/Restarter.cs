@@ -8,9 +8,9 @@ public class Restarter : MonoBehaviour
     
     void Awake()
     {
-        PlayerPrefs.DeleteKey("reinicio");
+        //PlayerPrefs.DeleteKey("reinicio");
 
-        /*if(PlayerPrefs.HasKey("reinicio"))
+        if(PlayerPrefs.HasKey("reinicio"))
         {
 
         }
@@ -18,6 +18,6 @@ public class Restarter : MonoBehaviour
         {
             PlayerPrefs.SetInt("reinicio", 1);
             SceneManager.LoadScene("FirstLevel");
-        }*/
+        }
     }
 }
