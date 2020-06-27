@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Restarter : MonoBehaviour
 {
-    
     void Awake()
     {
-        //PlayerPrefs.DeleteKey("reinicio");
+        //PlayerPrefs.DeleteKey("restart");
 
-        if(PlayerPrefs.HasKey("reinicio"))
+        if(PlayerPrefs.HasKey("restart"))
         {
 
         }
         else
         {
-            PlayerPrefs.SetInt("reinicio", 1);
+            PlayerPrefs.SetInt("restart", 1);
             SceneManager.LoadScene("FirstLevel");
         }
     }
