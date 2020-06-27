@@ -13,24 +13,23 @@ public class MenuManager : MonoBehaviour
     public GameObject about;
     public GameObject credits;
 
-    public void BackToMenu()
-    {
-        menu.Play();
-        SceneManager.LoadScene("Menu");
-    }
-
-    public void StartGame()
-    {
-        startLevel.Play();
-        SceneManager.LoadScene("FirstLevel");
-    }
-    
     public void Instructions()
     {
         startLevel.Play();
         SceneManager.LoadScene("Instructions");
     }
+    
+    public void StartGame()
+    {
+        startLevel.Play();
+        SceneManager.LoadScene("FirstLevel");
+    }
 
+    public void Restart()
+    {       
+        SceneManager.LoadScene("FirstLevel");
+    }
+      
     public void AboutButton()
     {
         button.Play();
@@ -49,5 +48,11 @@ public class MenuManager : MonoBehaviour
     {
         button.Play();
         about.SetActive(false);
+    }
+
+    public void BackToMenu()
+    {
+        menu.Play();
+        SceneManager.LoadScene("Menu");
     }
 }

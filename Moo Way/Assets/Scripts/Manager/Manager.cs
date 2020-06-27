@@ -63,7 +63,12 @@ public class Manager : MonoBehaviour
         alienControl = false;
         gameIsPaused = false;
 
-        timer = 420f;        
+        timer = 420f;   
+
+        pause.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        music.pitch = 1f;     
     }
 
     void Start()
@@ -72,7 +77,7 @@ public class Manager : MonoBehaviour
         fuel = 45;
         currentFuel = fuel;
         inGame = false;
-        Debug.Log(inGame);
+        
     }
 
     void Update()
@@ -83,15 +88,6 @@ public class Manager : MonoBehaviour
         GameOver();
         CowsCounter();
         CheckIfWon();
-    }
-
-    public void Restart()
-    {   
-        pause.SetActive(false);
-        Time.timeScale = 1f;
-        gameIsPaused = false;
-        music.pitch = 1f;     
-        SceneManager.LoadScene("FirstLevel");
     }
 
     public void PauseButton()
