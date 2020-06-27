@@ -50,8 +50,8 @@ public class Player : MonoBehaviour
         ActivateParticles();
         CheckIfWin();
 
-        //energyBar.SetEnergy(manager.currentFuel);
-
+        Physics2D.IgnoreLayerCollision(10, 12, true);
+        Physics2D.IgnoreLayerCollision(12, 10, true);
     }
 
     private void LimitateAxis()
@@ -126,9 +126,13 @@ public class Player : MonoBehaviour
    
     IEnumerator FuelText()
     {
-        fuelText.text = "You ran out of energy, let the ship load";
+        fuelText.text = "Lack of energy, the ship is loading";
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
+
+        fuelText.text = "Recycling trash gives you extra energy";
+
+        yield return new WaitForSeconds(3);
 
         fuelText.text = "";
     }

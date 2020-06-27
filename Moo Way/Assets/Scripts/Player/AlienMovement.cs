@@ -49,8 +49,8 @@ public class AlienMovement : MonoBehaviour
 
         LimitateAxis();
 
-        Physics.IgnoreLayerCollision(10, 11, true);
-
+        Physics2D.IgnoreLayerCollision(10, 11, true);
+        Physics2D.IgnoreLayerCollision(11, 10, true);
     }
 
     private void LimitateAxis()

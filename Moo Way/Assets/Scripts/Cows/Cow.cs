@@ -23,6 +23,12 @@ public class Cow : MonoBehaviour
         manager.floating = false;
     }
 
+    void Update()
+    {
+        Physics2D.IgnoreLayerCollision(10, 11, true);
+        Physics2D.IgnoreLayerCollision(11, 10, true);
+    }
+
     public void PickUpCow()
     {
         distance = Vector2.Distance(transform.position, target.position);
