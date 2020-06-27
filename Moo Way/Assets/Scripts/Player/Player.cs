@@ -128,11 +128,11 @@ public class Player : MonoBehaviour
     {
         fuelText.text = "Lack of energy, the ship is loading";
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
 
         fuelText.text = "Recycling trash gives you extra energy";
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
 
         fuelText.text = "";
     }

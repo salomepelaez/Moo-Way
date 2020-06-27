@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Restarter : MonoBehaviour
+public class Restart : MonoBehaviour
 {
     void Awake()
     {
-        //PlayerPrefs.DeleteKey("restart");
+        //PlayerPrefs.DeleteKey("reinicio");
 
-        if(PlayerPrefs.HasKey("restart"))
+        if(PlayerPrefs.HasKey("reinicio"))
         {
 
         }
         else
         {
-            PlayerPrefs.SetInt("restart", 1);
+            PlayerPrefs.SetInt("reinicio", 1);
             SceneManager.LoadScene("FirstLevel");
         }
     }
